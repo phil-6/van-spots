@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Rating, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # Association test
+  # ensure a review record belongs to a single spot record
+  it { should belong_to(:spot) }
+
+  # Validation test
+  # ensure columns are present before saving
+  it { should validate_presence_of(:score) }
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:spot_id) }
 end
