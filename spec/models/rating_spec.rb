@@ -8,7 +8,7 @@ RSpec.describe Rating, type: :model do
   # Validation test
   # ensure columns are present before saving
   it { should validate_presence_of(:score) }
-  it { should validate_presence_of(:title) }
-  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:review_title) }
+  it { should validate_presence_of(:review_body) }
   it { should validate_presence_of(:spot_id) }
 end
