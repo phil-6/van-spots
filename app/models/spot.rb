@@ -1,3 +1,4 @@
+# app/models/spot.rb
 class Spot < ApplicationRecord
 
   # model associations

@@ -1,3 +1,4 @@
+# app/models/rating.rb
 class Rating < ApplicationRecord
   # model association
   belongs_to :spot

@@ -1,3 +1,4 @@
+# spec/models/spot_spec.rb
 require 'rails_helper'
 
 RSpec.describe Spot, type: :model do
