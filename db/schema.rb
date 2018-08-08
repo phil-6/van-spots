@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "score"
+    t.string "created_by"
     t.string "review_title"
     t.text "review_body"
     t.integer "spot_id"
