@@ -7,7 +7,6 @@ class Spot < ApplicationRecord
   # validations
   validates_presence_of :name,
                         :created_by,
-                        :created_at,
                         :description,
                         :latitude,
                         :longitude

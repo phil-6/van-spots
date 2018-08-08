@@ -5,6 +5,7 @@ class Rating < ApplicationRecord
 
   # validations
   validates_presence_of :score,
+                        :created_by,
                         :review_title,
                         :review_body,
                         :spot_id
