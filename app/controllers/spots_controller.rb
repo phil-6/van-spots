@@ -7,17 +7,17 @@ class SpotsController < ApplicationController
     json_response(@spots)
   end
 
+  # GET /spots/:id
+  def show
+    json_response(@spot)
+  end
+
   # POST /spots
   def create
     #puts ("I'm here")
     #puts (spot_params)
     @spot = Spot.create!(spot_params)
     json_response(@spot, :created)
-  end
-
-  # GET /spots/:id
-  def show
-    json_response(@spot)
   end
 
   # PUT /spots/:id
