@@ -25,6 +25,22 @@ RSpec.describe 'VanSpots API', type: :request do
     end
   end
 
+  # Test suite for GET /:userID/spots
+  # describe 'GET /:userID/spots' do
+  #   # make HTTP get request before each example
+  #   before { get ':userID/spots', params: {}, headers: headers }
+  #
+  #   it 'returns spots' do
+  #     # Note `json` is a custom helper to parse JSON responses
+  #     expect(json).not_to be_empty
+  #     expect(json.size).to eq(10)
+  #   end
+  #
+  #   it 'returns status code 200' do
+  #     expect(response).to have_http_status(200)
+  #   end
+  # end
+
   # Test suite for GET /spots/:id
   describe 'GET /spots/:id' do
     before { get "/spots/#{spot_id}", params: {}, headers: headers }

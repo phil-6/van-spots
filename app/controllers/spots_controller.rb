@@ -7,6 +7,13 @@ class SpotsController < ApplicationController
     json_response(@spots)
   end
 
+  # GET :userID/spots
+  # def user_index
+  #   # get current user todos
+  #   @spots = current_user.spots
+  #   json_response(@spots)
+  # end
+
   # GET /spots/:id
   def show
     json_response(@spot)
@@ -16,7 +23,7 @@ class SpotsController < ApplicationController
   def create
     #puts ("I'm here")
     #puts (spot_params)
-    @spot = Spot.create!(spot_params)
+    @spot = current_user.spots.create!(spot_params)
     json_response(@spot, :created)
   end
 
@@ -36,7 +43,7 @@ class SpotsController < ApplicationController
 
   def spot_params
     # whitelist params
-    params.permit(:name, :created_by, :description, :latitude, :longitude)
+    params.permit(:name, :description, :latitude, :longitude)
   end
 
   def set_spot
