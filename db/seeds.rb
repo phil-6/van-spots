@@ -14,10 +14,23 @@
       description: Faker::HitchhikersGuideToTheGalaxy.quote,
       latitude: Faker::Number.decimal(4, 6),
       longitude:  Faker::Number.decimal(4, 6))
-  spot.ratings.create(
-      score: Faker::Number.between(0, 100),
-      created_by: Faker::Number.number(10),
-      review_title: Faker::Food.dish,
-      review_body: Faker::Movie.quote,
-      spot_id: Faker::Number.between(1, 50) )
+
+  3.times do
+    spot.ratings.create(
+        score: Faker::Number.between(0, 100),
+        created_by: Faker::Number.number(10),
+        review_title: Faker::Food.dish,
+        review_body: Faker::Movie.quote,
+        spot_id: Faker::Number.between(1, 50) )
+  end
+end
+
+
+1.times do
+user = User.create(
+               username: "test",
+               email: "test@email.com",
+               description: "I am test",
+               password: "testpass"
+)
 end
