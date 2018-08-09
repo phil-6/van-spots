@@ -53,13 +53,17 @@ RSpec.describe 'VanSpots API', type: :request do
   # Test suite for POST /spots
   describe 'POST /spots' do
     # valid payload
-    let(:valid_attributes) { { name: 'Learn Elm', created_by: '1' } }
+    let(:valid_attributes) { { name: 'Narnia',
+                               created_by: '1',
+                               description: 'peaceful once you defeat the ice queen',
+                               latitude: 51.558823,
+                               longitude: -4.160025 }.to_json  }
 
     context 'when the request is valid' do
       before { post '/spots', params: valid_attributes }
 
       it 'creates a spot' do
-        expect(json['name']).to eq('Learn Elm')
+        expect(json['name']).to eq('Narnia')
       end
 
       it 'returns status code 201' do
