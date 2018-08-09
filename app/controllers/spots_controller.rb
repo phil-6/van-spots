@@ -23,7 +23,7 @@ class SpotsController < ApplicationController
   # PUT /spots/:id
   def update
     @spot.update(spot_params)
-    head :no_content
+    json_response(@spot, :ok)
   end
 
   # DELETE /spots/:id

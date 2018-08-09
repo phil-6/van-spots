@@ -87,17 +87,32 @@ RSpec.describe 'VanSpots API', type: :request do
 
   # Test suite for PUT /spots/:id
   describe 'PUT /spots/:id' do
-    let(:valid_attributes) { { name: 'Shopping' } }
+    let(:valid_attributes) { { name: 'Not Narnia' } }
 
-    context 'when the record exists' do
+    context 'when the spot exists' do
       before { put "/spots/#{spot_id}", params: valid_attributes }
 
-      it 'updates the record' do
-        expect(response.body).to be_empty
+      it 'updates the spot' do
+        expect(json['name']).to eq('Not Narnia')
+        updated_spot = Spot.find(spot_id)
+        expect(updated_spot.name).to match(/Not Narnia/)
       end
 
       it 'returns status code 204' do
-        expect(response).to have_http_status(204)
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    context 'when the spot does not exist' do
+      let(:spot_id) { 100 }
+      before { put "/spots/#{spot_id}", params: valid_attributes }
+
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
+      end
+
+      it 'returns a not found message' do
+        expect(response.body).to match(/Couldn't find Spot/)
       end
     end
   end
