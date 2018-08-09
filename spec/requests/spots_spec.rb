@@ -2,14 +2,17 @@
 require 'rails_helper'
 
 RSpec.describe 'VanSpots API', type: :request do
-  # initialize test data 
-  let!(:spots) { create_list(:spot, 10) }
+  # add spots owner
+  let(:user) { create(:user) }
+  let!(:spots) { create_list(:spot, 10, created_by: user.id) }
   let(:spot_id) { spots.first.id }
+  # authorize request
+  let(:headers) { valid_headers }
 
   # Test suite for GET /spots
   describe 'GET /spots' do
     # make HTTP get request before each example
-    before { get '/spots' }
+    before { get '/spots', params: {}, headers: headers }
 
     it 'returns spots' do
       # Note `json` is a custom helper to parse JSON responses
@@ -24,7 +27,7 @@ RSpec.describe 'VanSpots API', type: :request do
 
   # Test suite for GET /spots/:id
   describe 'GET /spots/:id' do
-    before { get "/spots/#{spot_id}" }
+    before { get "/spots/#{spot_id}", params: {}, headers: headers }
 
     context 'when the record exists' do
       it 'returns the spot' do
@@ -54,13 +57,13 @@ RSpec.describe 'VanSpots API', type: :request do
   describe 'POST /spots' do
     # valid payload
     let(:valid_attributes) { { name: 'Narnia',
-                               created_by: '1',
+                               created_by: user.id.to_s,
                                description: 'peaceful once you defeat the ice queen',
                                latitude: 51.558823,
                                longitude: -4.160025 } }
 
     context 'when the request is valid' do
-      before { post '/spots', params: valid_attributes }
+      before { post '/spots', params: valid_attributes, headers: headers }
 
       it 'creates a spot' do
         expect(json['name']).to eq('Narnia')
@@ -72,7 +75,9 @@ RSpec.describe 'VanSpots API', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/spots', params: { name: 'Foobar' } }
+      let(:invalid_attributes) { { name: nil }.to_json }
+      before { post '/spots', params: invalid_attributes, headers: headers }
+
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -88,7 +93,7 @@ RSpec.describe 'VanSpots API', type: :request do
   # Test suite for PUT /spots/:id
   describe 'PUT /spots/:id' do
     let(:valid_attributes) { { name: 'Not Narnia' } }
-    before { put "/spots/#{spot_id}", params: valid_attributes }
+    before { put "/spots/#{spot_id}", params: valid_attributes, headers: headers }
 
     context 'when the spot exists' do
 
@@ -118,7 +123,7 @@ RSpec.describe 'VanSpots API', type: :request do
 
   # Test suite for DELETE /spots/:id
   describe 'DELETE /spots/:id' do
-    before { delete "/spots/#{spot_id}" }
+    before { delete "/spots/#{spot_id}", params: {}, headers: headers }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
