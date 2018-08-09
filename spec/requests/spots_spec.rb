@@ -88,9 +88,9 @@ RSpec.describe 'VanSpots API', type: :request do
   # Test suite for PUT /spots/:id
   describe 'PUT /spots/:id' do
     let(:valid_attributes) { { name: 'Not Narnia' } }
+    before { put "/spots/#{spot_id}", params: valid_attributes }
 
     context 'when the spot exists' do
-      before { put "/spots/#{spot_id}", params: valid_attributes }
 
       it 'updates the spot' do
         expect(json['name']).to eq('Not Narnia')
@@ -105,7 +105,6 @@ RSpec.describe 'VanSpots API', type: :request do
 
     context 'when the spot does not exist' do
       let(:spot_id) { 100 }
-      before { put "/spots/#{spot_id}", params: valid_attributes }
 
       it 'returns status code 404' do
         expect(response).to have_http_status(404)
