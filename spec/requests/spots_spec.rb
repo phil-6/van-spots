@@ -76,7 +76,7 @@ RSpec.describe 'VanSpots API', type: :request do
                                created_by: user.id.to_s,
                                description: 'peaceful once you defeat the ice queen',
                                latitude: 51.558823,
-                               longitude: -4.160025 } }
+                               longitude: -4.160025 }.to_json }
 
     context 'when the request is valid' do
       before { post '/spots', params: valid_attributes, headers: headers }
@@ -101,14 +101,14 @@ RSpec.describe 'VanSpots API', type: :request do
 
       it 'returns a validation failure message' do
         expect(response.body)
-            .to match(/Validation failed: Created by can't be blank/)
+            .to match(/Validation failed: Name can't be blank, Description can't be blank, Latitude can't be blank, Longitude can't be blank/)
       end
     end
   end
 
   # Test suite for PUT /spots/:id
   describe 'PUT /spots/:id' do
-    let(:valid_attributes) { { name: 'Not Narnia' } }
+    let(:valid_attributes) { { name: 'Not Narnia' }.to_json }
     before { put "/spots/#{spot_id}", params: valid_attributes, headers: headers }
 
     context 'when the spot exists' do
