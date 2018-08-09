@@ -57,7 +57,7 @@ RSpec.describe 'VanSpots API', type: :request do
                                created_by: '1',
                                description: 'peaceful once you defeat the ice queen',
                                latitude: 51.558823,
-                               longitude: -4.160025 }.to_json  }
+                               longitude: -4.160025 } }
 
     context 'when the request is valid' do
       before { post '/spots', params: valid_attributes }

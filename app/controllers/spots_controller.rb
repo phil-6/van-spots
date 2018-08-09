@@ -9,6 +9,8 @@ class SpotsController < ApplicationController
 
   # POST /spots
   def create
+    #puts ("I'm here")
+    #puts (spot_params)
     @spot = Spot.create!(spot_params)
     json_response(@spot, :created)
   end
