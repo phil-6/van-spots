@@ -111,7 +111,7 @@ RSpec.describe 'Ratings API' do
       it 'updates the rating' do
         expect(json['score']).to eq(60)
         updated_rating = Rating.find(id)
-        expect(updated_rating.score).to match(/60/)
+        expect(updated_rating.score).to match(60)
       end
 
       it 'returns status code 200' do
