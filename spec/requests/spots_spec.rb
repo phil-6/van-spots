@@ -98,7 +98,7 @@ RSpec.describe 'VanSpots API', type: :request do
         expect(updated_spot.name).to match(/Not Narnia/)
       end
 
-      it 'returns status code 204' do
+      it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
     end
