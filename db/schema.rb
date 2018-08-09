@@ -13,16 +13,14 @@
 ActiveRecord::Schema.define(version: 3) do
 
   create_table "ratings", force: :cascade do |t|
-    t.integer "score", limit: 1
+    t.integer "score"
     t.string "created_by"
     t.string "review_title"
     t.text "review_body"
     t.integer "spot_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spot_id"], name: "index_ratings_on_spot_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -31,18 +29,15 @@ ActiveRecord::Schema.define(version: 3) do
     t.text "description"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "name"
     t.string "email"
     t.text "description"
     t.string "password_digest"
-    t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
