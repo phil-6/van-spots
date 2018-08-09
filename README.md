@@ -1,24 +1,13 @@
-# README
+# Van Spots
+API-first application to allow users to log and view spots to wild camp in vans.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+* ruby 2.5.1p57 
+* Rails 5.2.1
 
-* Ruby version
+## Installing
 
-* System dependencies
+Use bundle to install
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use rspec to test
