@@ -14,6 +14,7 @@
       description: Faker::HitchhikersGuideToTheGalaxy.quote,
       latitude: Faker::Number.decimal(4, 6),
       longitude:  Faker::Number.decimal(4, 6))
+  puts("Van Spot Created")
 
   3.times do
     spot.ratings.create(
@@ -22,6 +23,7 @@
         review_title: Faker::Food.dish,
         review_body: Faker::Movie.quote,
         spot_id: Faker::Number.between(1, 50) )
+    puts("Spot Rating Created")
   end
 end
 
