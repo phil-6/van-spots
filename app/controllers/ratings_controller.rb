@@ -4,11 +4,11 @@ class RatingsController < ApplicationController
   before_action :set_spot_rating, only: [:show, :update, :destroy]
 
   # GET ratings
-  def ratings_index
-    @ratings = Rating.all
-    puts(@ratings.to_json.review_title)
-    json_response(@ratings)
-  end
+  # def ratings_index
+  #   @ratings = Rating.all
+  #   puts(@ratings.to_json.review_title)
+  #   json_response(@ratings)
+  # end
 
   # GET /spots/:spot_id/ratings
   def index
