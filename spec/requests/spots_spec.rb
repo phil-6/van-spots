@@ -12,11 +12,9 @@ RSpec.describe 'VanSpots API', type: :request do
 
   # Test suite for GET /spots when not authorized
   describe 'GET /spots' do
-    # make HTTP get request before each example
     before { get '/spots' , params: {}, headers: bad_headers}
 
     it 'returns spots' do
-      # Note `json` is a custom helper to parse JSON responses
       expect(json).not_to be_empty
       expect(json.size).to eq(10)
     end
@@ -29,11 +27,9 @@ RSpec.describe 'VanSpots API', type: :request do
 
   # Test suite for GET /spots when authorized
   describe 'GET /spots' do
-    # make HTTP get request before each example
     before { get '/spots', params: {}, headers: headers }
 
     it 'returns spots' do
-      # Note `json` is a custom helper to parse JSON responses
       expect(json).not_to be_empty
       expect(json.size).to eq(10)
     end
