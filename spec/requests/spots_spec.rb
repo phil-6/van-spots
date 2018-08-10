@@ -8,8 +8,26 @@ RSpec.describe 'VanSpots API', type: :request do
   let(:spot_id) { spots.first.id }
   # authorize request
   let(:headers) { valid_headers }
+  let(:bad_headers) { invalid_headers }
 
-  # Test suite for GET /spots
+  # Test suite for GET /spots when not authorized
+  describe 'GET /spots' do
+    # make HTTP get request before each example
+    before { get '/spots' , params: {}, headers: bad_headers}
+
+    it 'returns spots' do
+      # Note `json` is a custom helper to parse JSON responses
+      expect(json).not_to be_empty
+      expect(json.size).to eq(10)
+    end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(200)
+    end
+  end
+
+
+  # Test suite for GET /spots when authorized
   describe 'GET /spots' do
     # make HTTP get request before each example
     before { get '/spots', params: {}, headers: headers }
