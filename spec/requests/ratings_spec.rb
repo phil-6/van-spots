@@ -11,21 +11,19 @@ RSpec.describe 'Ratings API' do
   let(:headers) { valid_headers }
 
   # Test suite for GET /ratings
-  # describe 'GET /all_ratings' do
-  #   before { get '/all_ratings', params: {}, headers: headers}
-  #
-  #   context 'when rating exists' do
-  #     it 'returns status code 200' do
-  #       expect(response).to have_http_status(200)
-  #     end
-  #
-  #     it 'returns all ratings' do
-  #       expect(json.size).to eq(20)
-  #     end
-  #   end
-  # end
+  describe 'GET /ratings' do
+    before { get "/ratings", params: {}, headers: headers}
 
+    context 'when rating exists' do
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
 
+      it 'returns all ratings' do
+        expect(json.size).to eq(20)
+      end
+    end
+  end
 
   # Test suite for GET /spots/:spot_id/ratings
   describe 'GET /spots/:spot_id/ratings' do
