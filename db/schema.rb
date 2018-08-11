@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 3) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ratings", force: :cascade do |t|
     t.integer "score"
     t.string "created_by"
     t.string "review_title"
     t.text "review_body"
-    t.integer "spot_id"
+    t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spot_id"], name: "index_ratings_on_spot_id"
@@ -42,4 +45,5 @@ ActiveRecord::Schema.define(version: 3) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "ratings", "spots"
 end
