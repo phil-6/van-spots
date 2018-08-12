@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :ratings
   end
 
+  root to: "spots#index"
+
+  get '/api/spots', to: 'spots#api_index'
 
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'users#create'

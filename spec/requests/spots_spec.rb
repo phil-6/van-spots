@@ -8,11 +8,11 @@ RSpec.describe 'VanSpots API', type: :request do
   let(:spot_id) { spots.first.id }
   # authorize request
   let(:headers) { valid_headers }
-  let(:bad_headers) { invalid_headers }
+  let(:bad_headers) { no_auth_headers }
 
   # Test suite for GET /spots when not authorized
-  describe 'GET /spots' do
-    before { get '/spots' , params: {}, headers: bad_headers}
+  describe 'GET api/spots' do
+    before { get '/api/spots' , params: {}, headers: bad_headers}
 
     it 'returns spots' do
       expect(json).not_to be_empty
@@ -27,7 +27,7 @@ RSpec.describe 'VanSpots API', type: :request do
 
   # Test suite for GET /spots when authorized
   describe 'GET /spots' do
-    before { get '/spots', params: {}, headers: headers }
+    before { get '/api/spots', params: {}, headers: headers }
 
     it 'returns spots' do
       expect(json).not_to be_empty

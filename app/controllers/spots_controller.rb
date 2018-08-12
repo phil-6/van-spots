@@ -1,11 +1,16 @@
 class SpotsController < ApplicationController
-  skip_before_action :authorize_request, only: :index
+  skip_before_action :authorize_request, only: [:index, :api_index]
   before_action :set_spot, only: [:show, :update, :destroy]
 
-  # GET /spots
-  def index
+  # GET api/spots
+  def api_index
     @spots = Spot.all
     json_response(@spots)
+  end
+
+  # Get /spots
+  def index
+    @spots = Spot.all
   end
 
   # GET :userID/spots
