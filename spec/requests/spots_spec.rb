@@ -11,7 +11,7 @@ RSpec.describe 'VanSpots API', type: :request do
   let(:bad_headers) { no_auth_headers }
 
   # Test suite for GET /api/spots when not authorized
-  describe 'GET api/spots' do
+  describe 'GET /api/spots' do
     before { get '/api/spots' , params: {}, headers: bad_headers}
 
     it 'returns spots' do
@@ -26,7 +26,7 @@ RSpec.describe 'VanSpots API', type: :request do
 
 
   # Test suite for GET /api/spots when authorized
-  describe 'GET /spots' do
+  describe 'GET /api/spots' do
     before { get '/api/spots', params: {}, headers: headers }
 
     it 'returns spots' do
