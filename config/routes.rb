@@ -1,13 +1,15 @@
 # config/routes.rb
 Rails.application.routes.draw do
 
+  root 'pages#main'
+
   get '/ratings', to: 'ratings#ratings_index'
 
   resources :spots do
    resources :ratings
   end
 
-  root to: "spots#index"
+
 
 
   #Routes For API
