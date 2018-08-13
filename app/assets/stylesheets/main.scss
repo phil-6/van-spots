@@ -1,0 +1,15 @@
+@import "variables";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $font;
+  webkit-tap-highlight-color: #222;
+}
+
+.btn, .navbar-default, .navbar-default .navbar-header .navbar-brand, h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+}

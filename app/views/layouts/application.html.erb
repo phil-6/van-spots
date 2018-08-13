@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Van Spots</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,
+          initial-scale=1,
+          maximum-scale=1,
+          user-scalable=no">
+    <meta name="description" content="Van Spots - Wild camping spots for those with Vans">
+    <meta name="author" content="Phil Reynolds">
+    <meta name="theme-color" content="#663399">
 
-  <!-- Vue.js -->
-  <!-- development version, includes helpful console warnings -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!-- production version, optimized for size and speed -->
-  <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
-</head>
-<body>
-Does this load
-<%= yield %>
+    <title>Van Spots</title>
 
-</body>
+    <!--Favicon-->
+    <%#= favicon_link_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <!--  Vue.js -->
+    <!--  development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--  production version, optimized for size and speed -->
+    <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+
+    <!--  Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli|Raleway|Roboto" rel="stylesheet">
+
+
+
+  </head>
+  <body>
+
+  <%= yield %>
+
+  </body>
 </html>

@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   end
 
 
-
-
   #Routes For API
   get     '/api/spots',      to: 'spots#api_index'
   get     '/api/spots/:id',  to: 'spots#api_show'
