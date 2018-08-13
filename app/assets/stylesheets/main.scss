@@ -13,3 +13,27 @@ body {
 .btn, .navbar-default, .navbar-default .navbar-header .navbar-brand, h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
 }
+
+.bg-primary {
+  background-color: $brandprimary;
+}
+
+.bg-light {
+  background-color: $lighterblue;
+}
+
+.font-primary {
+  color: $brandprimary
+}
+
+.font-secondary {
+  color: $brandsecondary
+}
+
+.font-black {
+  color: $ink
+}
+
+.navbar-default {
+  opacity: 0.7;
+}
