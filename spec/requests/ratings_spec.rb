@@ -10,9 +10,9 @@ RSpec.describe 'Ratings API' do
   let(:id) { ratings.first.id }
   let(:headers) { valid_headers }
 
-  # Test suite for GET /ratings
-  describe 'GET /ratings' do
-    before { get "/ratings", params: {}, headers: headers}
+  # Test suite for GET /api/ratings
+  describe 'GET /api/ratings' do
+    before { get '/api/ratings', params: {}, headers: headers}
 
     context 'when rating exists' do
       it 'returns status code 200' do
@@ -25,9 +25,9 @@ RSpec.describe 'Ratings API' do
     end
   end
 
-  # Test suite for GET /spots/:spot_id/ratings
-  describe 'GET /spots/:spot_id/ratings' do
-    before { get "/spots/#{spot_id}/ratings", params: {}, headers: headers }
+  # Test suite for GET /api/spots/:spot_id/ratings
+  describe 'GET /api/spots/:spot_id/ratings' do
+    before { get "/api/spots/#{spot_id}/ratings", params: {}, headers: headers }
 
     context 'when spot rating exists' do
       it 'returns status code 200' do
@@ -52,9 +52,9 @@ RSpec.describe 'Ratings API' do
     end
   end
 
-  # Test suite for GET /spots/:spot_id/ratings/:id
-  describe 'GET /spots/:spot_id/ratings/:id' do
-    before { get "/spots/#{spot_id}/ratings/#{id}", params: {}, headers: headers }
+  # Test suite for GET /api/spots/:spot_id/ratings/:id
+  describe 'GET /api/spots/:spot_id/ratings/:id' do
+    before { get "/api/spots/#{spot_id}/ratings/#{id}", params: {}, headers: headers }
 
     context 'when spot rating exists' do
       it 'returns status code 200' do
@@ -91,15 +91,15 @@ RSpec.describe 'Ratings API' do
     end
   end
 
-  # Test suite for POST /spots/:spot_id/ratings
-  describe 'POST /spots/:spot_id/ratings' do
+  # Test suite for POST /api/spots/:spot_id/ratings
+  describe 'POST /api/spots/:spot_id/ratings' do
     let(:valid_attributes) { { score: 80,
                                created_by: user.id.to_s,
                                review_title: "Great Spot by the sea",
                                review_body: "There's an annoying Lion though, and they gave me a funny hat"}.to_json }
 
     context 'when request attributes are valid' do
-      before { post "/spots/#{spot_id}/ratings", params: valid_attributes, headers: headers }
+      before { post "/api/spots/#{spot_id}/ratings", params: valid_attributes, headers: headers }
 
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
@@ -107,7 +107,7 @@ RSpec.describe 'Ratings API' do
     end
 
     context 'when an invalid request' do
-      before { post "/spots/#{spot_id}/ratings", params: {},  headers: headers  }
+      before { post "/api/spots/#{spot_id}/ratings", params: {},  headers: headers  }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -119,10 +119,10 @@ RSpec.describe 'Ratings API' do
     end
   end
 
-  # Test suite for PUT /spots/:spot_id/ratings/:id
-  describe 'PUT /spots/:spot_id/ratings/:id' do
+  # Test suite for PUT /api/spots/:spot_id/ratings/:id
+  describe 'PUT /api/spots/:spot_id/ratings/:id' do
     let(:valid_attributes) { { score: 60 }.to_json }
-    before { put "/spots/#{spot_id}/ratings/#{id}", params: valid_attributes, headers: headers }
+    before { put "/api/spots/#{spot_id}/ratings/#{id}", params: valid_attributes, headers: headers }
     context 'when rating exists' do
 
       it 'updates the rating' do
@@ -149,9 +149,9 @@ RSpec.describe 'Ratings API' do
     end
   end
 
-  # Test suite for DELETE /spots/:id/ratings/:id
-  describe 'DELETE /spots/:id' do
-    before { delete "/spots/#{spot_id}/ratings/#{id}", params: {}, headers: headers }
+  # Test suite for DELETE /api/spots/:id/ratings/:id
+  describe 'DELETE /api/spots/:id/ratings/:id' do
+    before { delete "/api/spots/#{spot_id}/ratings/#{id}", params: {}, headers: headers }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
