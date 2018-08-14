@@ -1,21 +1,7 @@
 @import "variables";
 
-.bg-primary {
-  background-color: $brandprimary;
-}
-
-.bg-light {
-  background-color: $lighterblue;
-}
-
-.text-primary {
-  color: $brandprimary
-}
-
-.text-secondary {
-  color: $brandsecondary
-}
-
-.text-body {
-  color: $ink
-}
+$theme-colors: (
+        "primary": $brandprimary,
+        "secondary": $brandsecondary,
+        "dark": $ink
+);
