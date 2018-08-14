@@ -14,5 +14,14 @@ body {
   font-family: $heading-font;
 }
 
+hr {
+  border-color: $darkerorange;
+  border-width: 3px;
+  max-width: 50px;
+}
 
-
+.bg-primary hr,
+.bg-primarygrad hr,
+  hr.light {
+  border-color: $notquitewhite;
+}
