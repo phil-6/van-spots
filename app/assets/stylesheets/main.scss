@@ -1,0 +1,27 @@
+@import "variables";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: $font;
+  webkit-tap-highlight-color: #222;
+}
+
+.btn, .navbar-light, .navbar-light .navbar-header .navbar-brand, h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+}
+
+hr {
+  border-color: $brandsecondary;
+  border-width: 3px;
+  max-width: 50px;
+}
+
+.bg-primary hr,
+.bg-primarygrad hr,
+  hr.light {
+  border-color: $notquitewhite;
+}
