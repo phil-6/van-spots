@@ -1,24 +1,37 @@
-# README
+Van Spots
+API-first application to allow users to log and view spots to wild camp in vans.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Requirements
+ruby 2.5.1p57
+Rails 5.2.1
+Installing
+Use bundle to install
 
-Things you may want to cover:
+Generate Application Credentials --not sure if needed
 
-* Ruby version
+$ EDITOR="atom --wait" rails credentials:edit
 
-* System dependencies
+Create Database
 
-* Configuration
+$ rails db:migrate
 
-* Database creation
+$ rails db:test:prepare
 
-* Database initialization
+$ rails db:seed
 
-* How to run the test suite
+Use rspec to test
 
-* Services (job queues, cache servers, search engines, etc.)
+Running Locally
+$ rails s
 
-* Deployment instructions
+New terminal window
 
-* ...
+$ http :3000/auth/login email=test@email.com password=testpass
+
+(requires httpie)
+
+$ http :3000/spots Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MzM5Njk3NjF9.wJnoMyLjeszY8sb0R4t86xdAjyeP1-t-gW5TKyfq0H8'
+
+(note authorization spelt with a z)
+
+$ http :3000/spots/2/ratings Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MzM5Njk3NjF9.wJnoMyLjeszY8sb0R4t86xdAjyeP1-t-gW5TKyfq0H8'
