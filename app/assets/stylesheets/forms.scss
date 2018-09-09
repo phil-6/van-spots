@@ -17,7 +17,43 @@
     max-width: 400px;
     width: 80%;
     margin: auto;
+    //.btn-outline-info{
+    //  color: $skyblue ;
+    //  border-color: $skyblue;
+    //}
+    //.btn-outline-info:hover{
+    //  background-color: $skyblue;
+    //  color: $white;
+    //}
+  }
 
+
+  .user-form::before{ //for background image
+    /*min-height: auto;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: image-url('van_in_north_wales.JPG');
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    //color: $notquitewhite;
+
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -220px;
+    width: 100%;
+    height: 150%;
+    z-index: -1;
+    opacity: 0.9;
   }
 
   .other-actions {
