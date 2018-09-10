@@ -13,10 +13,11 @@
           <%= spot.description %>
         </div>
 
-<!--        TODO only display when logged in-->
-<!--        <div class="text-center">-->
-          <%#= link_to "READ MORE", spot_path(spot) %>
-<!--        </div>-->
+        <% if user_signed_in? %>
+          <div class="text-center">
+            <%= link_to "More Info", spot_path(spot) %>
+          </div>
+        <% end %>
         <br>
       </div>
     <% end %>
