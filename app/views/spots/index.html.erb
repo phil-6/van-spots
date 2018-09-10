@@ -5,6 +5,7 @@
         <div class="text-center">
           <h2><%= spot.name %></h2>
           <h6><%= spot.created_at.strftime('%b %d, %Y') %></h6>
+          <h6>Created By: <%= spot.user.username %></h6>
 
         </div>
 
