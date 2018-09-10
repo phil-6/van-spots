@@ -10,4 +10,7 @@ Rails.application.routes.draw do
     resources :ratings
   end
 
+  get '/users', to: 'pages#main'
+  get '/users/password', to: redirect('/users/password/new')
+
 end
