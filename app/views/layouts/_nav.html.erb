@@ -12,7 +12,9 @@
     </ul>
     <ul class="nav navbar-nav ml-auto">
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.username %></strong>.
+        <li class="nav-item">
+          <p class="nav-no-link">Logged in as <strong><%= current_user.username %></strong></p>
+        </li>
         <li class="nav-item">
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
         </li>
