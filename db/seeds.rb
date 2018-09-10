@@ -10,7 +10,7 @@
 
 User.create!(
     username: "test",
-    email: "test2@email.com",
+    email: "test@email.com",
     description: "I am test",
     password: "testpass"
 )
@@ -60,7 +60,7 @@ Spot.create!(
 
 Spot.create!(
     name: 'Cefn Bryn, Gower',
-    user_id: 1,
+    user_id: 2,
     description: 'Good place to stay, usually some other campers there too... watch out for cows using your van as a scratching post.',
     latitude: 51.58892,
     longitude: -4.17995
@@ -68,7 +68,7 @@ Spot.create!(
 
 Spot.create(
     name: 'Mountain Road',
-    user_id: 1,
+    user_id: 3,
     description: 'Awesome \n\n Layby, amazing views, warden has seen me and not said anything, stayed there several times.',
     latitude: 51.8578,
     longitude: -3.85222
