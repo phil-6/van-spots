@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 3) do
     t.bigint "user_id"
     t.string "name"
     t.text "description"
-    t.string "created_by"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
     t.datetime "created_at", null: false
