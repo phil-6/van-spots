@@ -1,15 +1,21 @@
 @import "variables";
 
 #overboot {
-  form {
-    #error_explanation {
-      h2 {
-        color: $darkerorange;
-        font-size: 1.2rem;
-        font-weight: 700;
-      }
+  #error_explanation {
+    margin: auto;
+    text-align: center;
+    h2 {
+      color: $darkerorange;
+      font-size: 1.2rem;
+      font-weight: 700;
+      max-width: 600px;
+    }
+    ul {
+      list-style-type:none;
+      padding-left: 0;
     }
   }
+
 
 
   .user-form {
