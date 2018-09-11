@@ -1,6 +1,6 @@
 @import "variables";
 #overboot {
-  header, header .header-content {
+  header, header .home-content {
     position: relative;
     width: 100%;
     text-align: center;
@@ -40,12 +40,12 @@
   }
 
 
-  header .header-content {
+  header .home-content {
     padding: 100px 15px;
 
   }
 
-  header .header-content .header-content-inner h1 {
+  header .home-content .home-content-inner h1 {
     font-weight: 900;
     text-transform: uppercase;
     margin-top: 0;
@@ -55,11 +55,11 @@
     /*text-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
   }
 
-  header .header-content .header-content-inner hr {
+  header .home-content .home-content-inner hr {
     margin: 30px auto;
   }
 
-  header .header-content .header-content-inner p {
+  header .home-content .home-content-inner p {
     font-weight: 300;
     font-family: $font;
     color: $ink;
