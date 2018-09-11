@@ -5,11 +5,7 @@ class Rating < ApplicationRecord
   belongs_to :user
 
   # validations
-  validates_presence_of :score,
-                        :created_by,
-                        :review_title,
-                        :review_body,
-                        :spot_id
-
-
+  validates_presence_of :user_id,
+                        :spot_id,
+                        :score
 end
