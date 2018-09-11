@@ -7,8 +7,6 @@
 
   <br/>
 
-  <% redirect_to(:root) if current_user.id != @rating.user_id %>
-
   <%= fields_for @rating, url: {action: "create"} do |rating_form| %>
     <div class="form-group">
       <%= rating_form.label :score %><br/>
