@@ -3,7 +3,7 @@
 
   <%= form_for @spot, url: {action: "create"} do |spot_form| %>
     <div class="form-group">
-      <%= spot_form.label :spot_name %><br />
+      <%= spot_form.label :spot_name, 'Spot Name' %><br />
       <%= spot_form.text_field :name, class: 'form-control'  %>
     </div>
 

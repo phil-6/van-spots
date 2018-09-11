@@ -1,5 +1,5 @@
 <div class="vs-form">
-  <h2>Edit <%= @spot.name %></h2>
+  <h2>Edit <em><%= @spot.name %></em></h2>
 
   <% if @spot.errors.any? %>
     <div id="error_explanation">
@@ -17,7 +17,7 @@
 
   <%= form_for @spot, url: {action: "update"} do |spot_form| %>
     <div class="form-group">
-      <%= spot_form.label :spot_name %><br />
+      <%= spot_form.label :spot_name, 'Spot Name' %><br />
       <%= spot_form.text_field :name, class: 'form-control'  %>
     </div>
 
