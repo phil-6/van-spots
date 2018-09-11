@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
   before_action :set_spot, except: :ratings_index
   before_action :set_spot_rating, only: [:show, :update, :destroy]
+  before_action :require_permission, only: [:edit, :update, :destroy]
 
 
   # GET /ratings # all ratings
@@ -40,6 +41,12 @@ class RatingsController < ApplicationController
   end
 
   private
+
+  def require_permission
+    if current_user != Rating.find(params[:id]).user
+      redirect_to spot_path
+    end
+  end
 
   def rating_params
     params.permit(:score, :created_by, :review_title, :review_body)

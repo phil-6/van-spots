@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_spot, only: [:show, :update, :destroy]
-
+  before_action :require_permission, only: [:edit, :update, :destroy]
 
   # Get /spots
   def index
@@ -50,6 +50,12 @@ class SpotsController < ApplicationController
   end
 
   private
+
+  def require_permission
+    if current_user != Spot.find(params[:id]).user
+      redirect_to spot_path
+    end
+  end
 
   def spot_params
     # whitelist params
