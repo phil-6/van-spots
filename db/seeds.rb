@@ -9,8 +9,14 @@
 
 
 User.create!(
+    username: "VanSpots",
+    email: "VanSpots@elasticparsley.uk",
+    description: "Hello World",
+    password: "test123"
+)
+User.create!(
     username: "test",
-    email: "test@email.com",
+    email: "test1@email.com",
     description: "I am test",
     password: "testpass"
 )
@@ -68,7 +74,7 @@ Spot.create!(
 
 Spot.create(
     name: 'Mountain Road',
-    user_id: 3,
+    user_id: 2,
     description: 'Awesome \n\n Layby, amazing views, warden has seen me and not said anything, stayed there several times.',
     latitude: 51.8578,
     longitude: -3.85222
