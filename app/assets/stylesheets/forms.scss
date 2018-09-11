@@ -18,7 +18,7 @@
 
 
 
-  .user-form {
+  .vs-form {
     text-align: center;
     max-width: 400px;
     width: 80%;
@@ -36,7 +36,7 @@
   }
 
 
-  .user-form::before{ //for background image
+  .vs-form::before{ //for background image
     /*min-height: auto;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
