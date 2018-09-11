@@ -72,7 +72,7 @@ Spot.create!(
     longitude: -4.17995
 )
 
-Spot.create(
+Spot.create!(
     name: 'Mountain Road',
     user_id: 2,
     description: 'Awesome \n\n Layby, amazing views, warden has seen me and not said anything, stayed there several times.',
@@ -80,12 +80,50 @@ Spot.create(
     longitude: -3.85222
 )
 
-Spot.create(
+Spot.create!(
     name: 'Lay-by near Llangrannog',
     user_id: 1,
     description: 'Quiet lay by up the hill. MWB and SWB only as turning up the hill is a touch tight...',
     latitude: 52.15372,
     longitude: -4.47397
+)
+
+Rating.create!(
+    user_id: 1,
+    spot_id: 5,
+    score: 7,
+    review_title: 'Interesting Access',
+    review_body: 'Getting to it is challenging but it\'s a nice quiet spot in the woods'
+)
+
+Rating.create!(
+    user_id: 2,
+    spot_id: 2,
+    score: 4
+)
+
+Rating.create!(
+    user_id: 1,
+    spot_id: 4,
+    score: 8
+)
+
+Rating.create!(
+    user_id: 2,
+    spot_id: 1,
+    score: 6
+)
+
+Rating.create!(
+    user_id: 1,
+    spot_id: 1,
+    score: 9
+)
+
+Rating.create!(
+    user_id: 1,
+    spot_id: 2,
+    score: 4
 )
 
 

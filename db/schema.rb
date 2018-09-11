@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "ratings", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "spot_id"
     t.integer "score"
-    t.string "created_by"
     t.string "review_title"
     t.text "review_body"
-    t.bigint "spot_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["spot_id"], name: "index_ratings_on_spot_id"
@@ -53,5 +52,4 @@ ActiveRecord::Schema.define(version: 3) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "ratings", "spots"
 end
