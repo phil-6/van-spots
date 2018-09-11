@@ -5,6 +5,7 @@
           <h2><%= @spot.name %></h2>
           <h6><%= @spot.created_at.strftime('%b %d, %Y') %></h6>
           <h6>Created By: <%= @spot.user.username %></h6>
+          <h6>Score: <%= @spot.ratings.map(&:score).sum.to_f.round(1) / @spot.ratings.count %>/10</h6>
 
         </div>
 
@@ -12,14 +13,47 @@
           <%= @spot.description %>
         </div>
 
-        <% if (current_user.id == @spot.user_id)%>
+        <!--Edit if Owner-->
+        <% if current_user.id == @spot.user_id%>
           <div class="text-center">
             Hello World
             <!-- TODO add edit spot form here.-->
           </div>
         <% end %>
 
-        <br>
+        <!--Rate Spot-->
+        <div>
+          Stayed here? Leave a rating!
+          <%= link_to "Rate Spot", new_spot_rating_path(@spot) %>
+        </div>
+
+
+        <!--Spot Stats-->
+        <div>
+          <h3>Stats </h3>
+          Total Score: <%= @spot.ratings.map(&:score).sum %> <br />
+          Total Ratings: <%= @spot.ratings.count %><br />
+          Total Reviews: <%= @spot.ratings.count(:review_title) %>
+        </div>
+
+
+        <!--Reviews-->
+        <% if @spot.ratings.count(:review_title) > 0 %>
+          <div>
+            <h3 class="text-center">Reviews</h3>
+            <% @spot.ratings.each do |rating| %>
+              <h4 class="text-center"><%= rating.review_title %> by <%= rating.user.username %></h4>
+              <h6><%= rating.created_at.strftime('%b %d, %Y') %></h6>
+              <p><%= rating.review_body %></p>
+              <% if current_user.id == rating.user_id%>
+                <div class="text-center">
+                  <%= button_to "Edit Review", edit_spot_rating_url(@spot, rating), method: :get, class: 'btn btn-primary' %>
+                  <!-- TODO add delete option -->
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
   </div>
 </div>

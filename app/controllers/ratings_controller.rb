@@ -24,6 +24,11 @@ class RatingsController < ApplicationController
     @spot.ratings.create!(rating_params)
   end
 
+  # GET /spots/:id/ratings/:id/edit
+  def edit
+    @rating = Rating.find(params[:id])
+  end
+
   # PUT /spots/:spot_id/ratings/:id
   def update
     @rating.update(rating_params)
