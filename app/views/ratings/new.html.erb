@@ -1,0 +1,30 @@
+<div class="vs-form">
+  <h2>How would you rate:</h2>
+  <h2><%= @spot.name %>?</h2>
+  <div>
+    <%= @spot.description %>
+  </div>
+
+  <br/>
+
+  <%= fields_for @rating, url: {action: "create"} do |rating_form| %>
+    <div class="form-group">
+      <%= rating_form.label :score %><br/>
+      <%= rating_form.text_field :score, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= rating_form.label :review_title %><br/>
+      <%= rating_form.text_field :review_title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= rating_form.label :review_body %><br/>
+      <%= rating_form.text_area :review_body, class: 'form-control' %>
+    </div>
+
+    <div class="actions form-group">
+      <%= rating_form.submit "Rate Spot", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

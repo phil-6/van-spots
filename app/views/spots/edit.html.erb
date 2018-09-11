@@ -1,7 +1,21 @@
 <div class="vs-form">
-  <h2>Create New Spot</h2>
+  <h2>Edit <%= @spot.name %></h2>
 
-  <%= form_for @spot, url: {action: "create"} do |spot_form| %>
+  <% if @spot.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@spot.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @spot.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @spot, url: {action: "update"} do |spot_form| %>
     <div class="form-group">
       <%= spot_form.label :spot_name %><br />
       <%= spot_form.text_field :name, class: 'form-control'  %>
@@ -18,7 +32,7 @@
     </div>
 
     <div class="actions form-group">
-      <%= spot_form.submit "Create Spot", class: 'btn btn-primary'  %>
+      <%= spot_form.submit "Update Spot", class: 'btn btn-primary'  %>
     </div>
 
   <% end %>
