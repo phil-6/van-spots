@@ -17,8 +17,6 @@
         <% if current_user.id == @spot.user_id%>
           <div class="text-center">
             <%= button_to "Edit Spot", edit_spot_url(@spot), method: :get, class: 'btn btn-sm btn-primary' %>
-
-            <!-- TODO add edit spot form here.-->
           </div>
         <% end %>
 
