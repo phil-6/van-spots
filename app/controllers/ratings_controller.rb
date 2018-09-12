@@ -41,7 +41,13 @@ class RatingsController < ApplicationController
 
   # PUT /spots/:spot_id/ratings/:id
   def update
-    @rating.update(rating_params)
+    @rating = Rating.find(params[:id])
+
+    if @rating.update(rating_params)
+      redirect_to @spot
+    else
+      render 'edit'
+    end
   end
 
   # DELETE /spots/:spot_id/ratings/:id
