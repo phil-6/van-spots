@@ -1,5 +1,17 @@
 <div class="container">
-  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
+  <header>
+    <div class="finder-header">
+
+      <h1> <span class="headingBrandVan">Van</span> <span class="headingBrandSpots">Spots</span> </h1>
+      <% if user_signed_in? %>
+        <%= link_to "Create Spot", new_spot_path, class: 'btn btn-sm btn-primary' %>
+      <% end %>
+      <hr />
+    </div>
+  </header>
+
+
+  <div class="">
     <% @spots.each do |spot| %>
       <div class="col-xs-12">
         <div class="text-center">
