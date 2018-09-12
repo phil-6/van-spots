@@ -5,5 +5,9 @@ class PagesController < ApplicationController
     render template: "pages/main"
   end
 
+  def map
+    render template: "pages/map"
+  end
+
 
 end

@@ -1,0 +1,43 @@
+@import "variables";
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+  height: 100%;
+}
+
+/*Info Window Tweaks*/
+.infoWindowHeading{
+  font-family: $heading-font
+}
+
+.infoWindowHeading{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.infoWindowContent p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-width: 360px;
+}
+
+#showAllUI, #hideAllUI {
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+  cursor: pointer;
+  /*float: left;*/
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+#showAllText, #hideAllText {
+color: rgb(25,25,25);
+  font-family: $font;
+  font-size: 15px;
+  line-height: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}

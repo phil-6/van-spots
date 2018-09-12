@@ -3,9 +3,15 @@ class SpotsController < ApplicationController
   before_action :set_spot, only: [:show, :update, :destroy]
   before_action :require_permission, only: [:edit, :update, :destroy]
 
-  # Get /spots
+  # GET /spots
   def index
     @spots = Spot.all
+  end
+
+  # GET /api/spots
+  def api_index
+    @spots = Spot.all
+    render json: @spots
   end
 
   # GET /spots/:id
