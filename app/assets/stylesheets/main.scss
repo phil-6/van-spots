@@ -25,3 +25,10 @@ hr {
   hr.light {
   border-color: $notquitewhite;
 }
+
+#overboot {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
