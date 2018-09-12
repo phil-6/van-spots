@@ -7,7 +7,7 @@
 
   <br/>
 
-  <%= form_for @rating, url: {action: "create"} do |rating_form| %>
+  <%= form_for @rating, url: {action: "update"} do |rating_form| %>
     <div class="form-group">
       <%= rating_form.label :score %><br/>
       <%= rating_form.text_field :score, class: 'form-control' %>
