@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :api_index]
   before_action :set_spot, only: [:show, :update, :destroy]
   before_action :require_permission, only: [:edit, :update, :destroy]
 
