@@ -26,7 +26,11 @@ class SpotsController < ApplicationController
 
   # POST /spots
   def create
-    @spot = current_user.spots.create!(spot_params)
+    if @spot = current_user.spots.create!(spot_params)
+      redirect_to @spot
+    else
+      render 'new'
+    end
     #TODO Add Response
   end
 
@@ -65,7 +69,7 @@ class SpotsController < ApplicationController
 
   def spot_params
     # whitelist params
-    params.permit(:name, :description, :latitude, :longitude)
+    params.require(:spot).permit(:name, :description, :latitude, :longitude)
   end
 
   def set_spot

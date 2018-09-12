@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # model associations
-  has_many :spots, foreign_key: :created_by
-  has_many :ratings, dependent: :destroy, foreign_key: :created_by
+  has_many :spots, foreign_key: :user_id
+  has_many :ratings, dependent: :destroy, foreign_key: :user_id
 
   # validations
   validates_presence_of :username,

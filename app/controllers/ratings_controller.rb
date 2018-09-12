@@ -20,9 +20,18 @@ class RatingsController < ApplicationController
     @rating
   end
 
+  # GET /spots/new
+  def new
+    @rating = Rating.new
+  end
+
   # POST /spots/:spot_id/ratings
   def create
-    @spot.ratings.create!(rating_params)
+    if current_user.ratings.create!(rating_params)
+      redirect_to @spot
+    else
+      render 'edit'
+    end
   end
 
   # GET /spots/:id/ratings/:id/edit
@@ -49,7 +58,7 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.permit(:score, :created_by, :review_title, :review_body)
+    params.require(:rating).permit(:score, :review_title, :review_body, :spot_id)
   end
 
   def set_spot

@@ -7,7 +7,7 @@
 
   <br/>
 
-  <%= fields_for @rating, url: {action: "create"} do |rating_form| %>
+  <%= form_for @rating, url: {action: "create"} do |rating_form| %>
     <div class="form-group">
       <%= rating_form.label :score %><br/>
       <%= rating_form.text_field :score, class: 'form-control' %>
@@ -23,9 +23,12 @@
       <%= rating_form.text_area :review_body, class: 'form-control' %>
     </div>
 
+    <%= rating_form.hidden_field :spot_id, value: @spot.id %>
+
     <div class="actions form-group">
       <%= link_to "Back", :back, class: 'btn btn-secondary' %>
       <%= rating_form.submit "Rate Spot", class: 'btn btn-primary' %>
     </div>
+
   <% end %>
 </div>
