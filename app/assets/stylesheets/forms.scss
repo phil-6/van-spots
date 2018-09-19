@@ -16,14 +16,16 @@
     }
   }
 
-
-
   .vs-form {
     text-align: center;
     max-width: 400px;
     width: 80%;
     margin: auto;
     padding-top: 80px;
+    select {
+      width: 60%;
+      margin: auto;
+    }
     //.btn-info{
     //  background-color: $skyblue;
     //  border-color: $skyblue;
@@ -35,7 +37,6 @@
     //  color: $white;
     //}
   }
-
 
   .vs-form::before{ //for background image
     /*min-height: auto;*/
