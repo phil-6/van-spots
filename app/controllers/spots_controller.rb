@@ -22,6 +22,10 @@ class SpotsController < ApplicationController
   # GET /spots/new
   def new
     @spot = Spot.new
+    if  params['latitude'].present? && params['longitude'].present?
+      @spot.latitude = params['latitude']
+      @spot.longitude = params['longitude']
+    end
   end
 
   # POST /spots
