@@ -146,7 +146,8 @@
             console.log( location.lat());
 
             var newMarkerInfoWindowContent = '<div id="content">' +
-                '<a href="/spots/new"> Add Spot Here </a>' +
+                '<a href="/spots/new?latitude=' + location.lat() +
+                '&longitude=' + location.lng() + '"> Add Spot Here </a>' +
                 '</div>';
             newMarkerInfoWindow.setContent(newMarkerInfoWindowContent);
             newMarkerInfoWindow.open(map, newMarker);
