@@ -30,10 +30,26 @@
       <%= spot_form.text_area :description, class: 'form-control', :required => true  %>
     </div>
 
-    <div class="form-group">
-      <%= spot_form.label :location %><br />
-      <%= spot_form.text_field :latitude, class: 'form-control', :required => true %>
-      <%= spot_form.text_field :longitude, class: 'form-control', :required => true  %>
+    <%= spot_form.label :location %><br />
+    <div class="form-row">
+      <div class="form-group col-sm-6">
+      <%= spot_form.label :latitude %>
+      <%= spot_form.text_field :latitude,
+                               class: 'form-control',
+                               :required => true,
+                               :pattern => "^(\\+|-)?(?:90(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]{1,6})?))$",
+                               :placeholder => '51.605411'
+      %>
+      </div>
+      <div class="form-group col-sm-6">
+      <%= spot_form.label :longitude %>
+      <%= spot_form.text_field :longitude,
+                               class: 'form-control',
+                               :required => true,
+                               :pattern => "^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$",
+                               :placeholder => '-3.983570'
+      %>
+      </div>
     </div>
 
     <div class="actions form-group">
