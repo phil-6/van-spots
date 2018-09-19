@@ -51,6 +51,7 @@ User.create!(
 Spot.create!(
     name: 'Penrice, Gower',
     user_id: 1,
+    spot_type: 'Free Spot',
     description: 'Quiet spot, Internet\'s not the best but with an antenna it\'s ok. Hunts on the weekends meet here, can get pretty hectic, stayed there all day and no complaints. It\'s silent at night apart from the wildlife.',
     latitude: 51.57297,
     longitude: -4.17569
@@ -59,6 +60,7 @@ Spot.create!(
 Spot.create!(
     name: 'Penclawdd',
     user_id: 1,
+    spot_type: 'Free Spot',
     description: 'Beautiful spot and quiet. Good Internet... watch out for high tides! Got woken up by a bus driver at 7am with my wheels under water and the tide still coming in, I left pretty sharpish but it didn\'t really come in any more.',
     latitude: 51.6412,
     longitude: -4.12187
@@ -67,6 +69,7 @@ Spot.create!(
 Spot.create!(
     name: 'Cefn Bryn, Gower',
     user_id: 2,
+    spot_type: 'Free Spot',
     description: 'Good place to stay, usually some other campers there too... watch out for cows using your van as a scratching post.',
     latitude: 51.58892,
     longitude: -4.17995
@@ -75,6 +78,7 @@ Spot.create!(
 Spot.create!(
     name: 'Mountain Road',
     user_id: 2,
+    spot_type: 'Free Spot',
     description: 'Awesome \n\n Layby, amazing views, warden has seen me and not said anything, stayed there several times.',
     latitude: 51.8578,
     longitude: -3.85222
@@ -83,6 +87,7 @@ Spot.create!(
 Spot.create!(
     name: 'Lay-by near Llangrannog',
     user_id: 1,
+    spot_type: 'Free Spot',
     description: 'Quiet lay by up the hill. MWB and SWB only as turning up the hill is a touch tight...',
     latitude: 52.15372,
     longitude: -4.47397

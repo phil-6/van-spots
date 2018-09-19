@@ -69,7 +69,7 @@ class SpotsController < ApplicationController
 
   def spot_params
     # whitelist params
-    params.require(:spot).permit(:name, :description, :latitude, :longitude)
+    params.require(:spot).permit(:name, :spot_type, :description, :latitude, :longitude)
   end
 
   def set_spot

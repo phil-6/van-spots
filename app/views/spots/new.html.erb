@@ -3,18 +3,37 @@
 
   <%= form_for @spot, url: {action: "create"} do |spot_form| %>
     <div class="form-group">
-      <%= spot_form.label :spot_name, 'Spot Name' %><br />
-      <%= spot_form.text_field :name, class: 'form-control'  %>
+      <%= spot_form.label :name, 'Spot Name' %><br />
+      <%= spot_form.text_field :name, class: 'form-control', :required => true  %>
+    </div>
+
+    <div class="form-group">
+      <%= spot_form.label :spot_type, 'Spot Type' %><br />
+      <%= spot_form.select(:spot_type,
+                           options_for_select([['Free Spot', 1],
+                                               ['Paid Spot', 2],
+                                               ['Campsite', 3],
+                                               ['MTB Spot', 4],
+                                               ['Climbing Spot', 5],
+                                               ['Kayaking Spot', 6],
+                                               ['Surf Spot',7],
+                                               ['Toilet', 8],
+                                               ['Shower', 9]
+                                              ], 1),
+                           {include_blank: false,
+                            include_hidden: false},
+                           {:class => 'form-control'}) %>
     </div>
 
     <div class="form-group">
       <%= spot_form.label :description %><br />
-      <%= spot_form.text_area :description, class: 'form-control'  %>
+      <%= spot_form.text_area :description, class: 'form-control', :required => true  %>
     </div>
 
     <div class="form-group">
       <%= spot_form.label :location %><br />
-      <%= spot_form.text_field :latitude, class: 'form-control' %><%= spot_form.text_field :longitude, class: 'form-control'  %>
+      <%= spot_form.text_field :latitude, class: 'form-control', :required => true %>
+      <%= spot_form.text_field :longitude, class: 'form-control', :required => true  %>
     </div>
 
     <div class="actions form-group">
