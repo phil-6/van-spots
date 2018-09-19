@@ -30,12 +30,12 @@
 
     <div class="form-group">
       <%= rating_form.label :review_title %><br/>
-      <%= rating_form.text_field :review_title, class: 'form-control' %>
+      <%= rating_form.text_field :review_title, class: 'form-control', placeholder: '(Optional)' %>
     </div>
 
     <div class="form-group">
       <%= rating_form.label :review_body %><br/>
-      <%= rating_form.text_area :review_body, class: 'form-control' %>
+      <%= rating_form.text_area :review_body, class: 'form-control', placeholder: '(Optional)' %>
     </div>
 
     <%= rating_form.hidden_field :spot_id, value: @spot.id %>
