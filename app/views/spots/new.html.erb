@@ -10,16 +10,16 @@
     <div class="form-group">
       <%= spot_form.label :spot_type, 'Spot Type' %><br />
       <%= spot_form.select(:spot_type,
-                           options_for_select([['Free Spot', 1],
-                                               ['Paid Spot', 2],
-                                               ['Campsite', 3],
-                                               ['MTB Spot', 4],
-                                               ['Climbing Spot', 5],
-                                               ['Kayaking Spot', 6],
-                                               ['Surf Spot',7],
-                                               ['Toilet', 8],
-                                               ['Shower', 9]
-                                              ], 1),
+                           options_for_select([['Free Spot', 'Free Spot'],
+                                               ['Paid Spot', 'Paid Spot'],
+                                               ['Campsite', 'Campsite'],
+                                               ['MTB Spot', 'MTB Spot'],
+                                               ['Climbing Spot', 'Climbing Spot'],
+                                               ['Kayaking Spot', 'Kayaking Spot'],
+                                               ['Surf Spot','Surf Spot'],
+                                               ['Toilet', 'Toilet'],
+                                               ['Shower', 'Shower']
+                                              ], 'Free Spot'),
                            {include_blank: false,
                             include_hidden: false},
                            {:class => 'form-control'}) %>

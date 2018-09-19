@@ -6,7 +6,10 @@
           <h6><%= @spot.created_at.strftime('%b %d, %Y') %></h6>
           <h6>Created By: <%= @spot.user.username %></h6>
           <h6>Score: <%= @spot.ratings.map(&:score).sum.to_f.round(1) / @spot.ratings.count %>/10</h6>
+        </div>
 
+        <div class="text-center">
+          <%= @spot.spot_type %>
         </div>
 
         <div>
