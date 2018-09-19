@@ -106,7 +106,37 @@
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+        // google.maps.event.addListener( marker, 'click', function ( event ) {
+        //     document.getElementById( "maps_latitude" ).value = event.latLng.lat();
+        //     document.getElementById( "maps_longitude" ).value = event.latLng.lng();
+        // } );
+
+        /**
+         ==========
+         Add Marker on Click
+         ==========
+         */
+
+        google.maps.event.addListener(map, "click", function(event) {
+            marker = new google.maps.Marker({
+                position: event.latLng,
+                map: map
+            });
+            console.log( event.latLng.lat());
+        });
+
+    /**
+    ===============
+    End of Init Map
+    ===============
+    */
     }
+
+
+
+
+
+
     /*Location Error Handling*/
     function handleLocationError(browserHasGeolocation, infoWindow, userPos) {
         infoWindow.setPosition(userPos);
@@ -133,7 +163,11 @@
                 '<a href="/spots/' + marker.id + '">' + marker.name + '</a></h2>' +
                 '<div id="infoWindowContent" class="infoWindowContent">' +
                 '<p>' + marker.description + '</p>' +
-                '<p><a href="https://www.google.com/maps/dir/?api=1&destination='+ marker.latitude + ',' + marker.longitude + '">Directions</a></p>' + '</div>' +
+                '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
+                + marker.latitude + ','
+                + marker.longitude +
+                '">Directions</a></p>' +
+                '</div>' +
                 '</div>';
             infowindow.marker = marker;
             infowindow.setContent(infoWindowContent);
@@ -310,6 +344,14 @@
         $(this).parent().find('div.active').removeClass('active');
         $(this).addClass('active');
     });
+
+    /**
+     ==========
+     Get Location
+     ==========
+     */
+
+
 </script>
 
 
