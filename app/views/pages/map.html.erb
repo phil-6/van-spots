@@ -62,8 +62,6 @@
                     name: data.name,
                     description: data.description,
                     type: data.spot_type,
-                    latitude: data.latitude,
-                    longitude: data.longitude,
                     animation: google.maps.Animation.DROP
                 });
 
@@ -107,9 +105,9 @@
                 };
                 userMarker = new google.maps.Marker({
                     position: userPos,
+                    animation: google.maps.Animation.DROP,
                     map: map
                 });
-                // infoWindow.setPosition(userPos);
                 userInfoWindow.setContent('You are here.');
                 userMarker.addListener('click', function(){
                     userInfoWindow.open(map, userMarker)
@@ -127,22 +125,41 @@
         //     document.getElementById( "maps_longitude" ).value = event.latLng.lng();
         // } );
 
-
-
-
         /**
          ==========
          Add Marker on Click
          ==========
          */
 
-        google.maps.event.addListener(map, "click", function(event) {
-            marker = new google.maps.Marker({
-                position: event.latLng,
-                map: map
+        var newMarkerInfoWindow = new google.maps.InfoWindow({map: map});
+        var newMarker;
+
+        function placeNewMarker(location){
+            if (newMarker) {
+                newMarker.setPosition(location);
+            } else {
+                newMarker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+            console.log( location.lat());
+
+            var newMarkerInfoWindowContent = '<div id="content">' +
+                '<a href="#"> Add Spot Here </a>' +
+                '</div>';
+            newMarkerInfoWindow.setContent(newMarkerInfoWindowContent);
+            newMarker.addListener('click', function(){
+                newMarkerInfoWindow.open(map, newMarker)
             });
-            console.log( event.latLng.lat());
+        }
+
+        google.maps.event.addListener(map, "click", function(event) {
+           placeNewMarker(event.latLng)
         });
+
+
+
 
     /**
     ===============
@@ -154,8 +171,6 @@
 
 
 
-
-
     /*Location Error Handling*/
     function handleLocationError(browserHasGeolocation, infoWindow, userPos) {
         infoWindow.setPosition(userPos);
@@ -163,6 +178,7 @@
             'Error: The Geolocation service failed.' :
             'Error: Your browser doesn\'t support geolocation.');
     }
+
     /**
      ==========
      Info Windows
@@ -177,6 +193,7 @@
         // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker !== marker) {
             //add information to info window
+            console.log( marker);
             var infoWindowContent = '<div id="content">' +
                 '<h2 id="infoWindowHeading" class="infoWindowHeading">' +
                 '<a href="/spots/' + marker.id + '">' + marker.name + '</a></h2>' +
@@ -184,8 +201,8 @@
                 '<h6>' + marker.type + '</h6>' +
                 '<p>' + marker.description + '</p>' +
                 '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
-                + marker.latitude + ','
-                + marker.longitude +
+                + marker.position.lat() + ','
+                + marker.position.lng() +
                 '">Directions</a></p>' +
                 '</div>' +
                 '</div>';
