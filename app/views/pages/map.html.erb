@@ -149,7 +149,7 @@
                 '<a href="/spots/new"> Add Spot Here </a>' +
                 '</div>';
             newMarkerInfoWindow.setContent(newMarkerInfoWindowContent);
-            newMarkerInfoWindow.open(map, newMarker)
+            newMarkerInfoWindow.open(map, newMarker);
             newMarker.addListener('click', function(){
                 newMarkerInfoWindow.open(map, newMarker)
             });
