@@ -5,6 +5,7 @@
     //creates a new blank array for all the listing markers
     var markers = [];
     var markerCluster;
+    var userPos;
 
 
 
@@ -52,6 +53,8 @@
                     id: data.id,
                     name: data.name,
                     description: data.description,
+                    latitude: data.latitude,
+                    longitude: data.longitude,
                     animation: google.maps.Animation.DROP
                 });
 
@@ -89,13 +92,13 @@
          // Try HTML5 geolocation.
          if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
-                var pos = {
+                userPos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                infoWindow.setPosition(pos);
+                infoWindow.setPosition(userPos);
                 infoWindow.setContent('Location found.');
-                map.setCenter(pos);
+                map.setCenter(userPos);
             }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
@@ -105,8 +108,8 @@
         }
     }
     /*Location Error Handling*/
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
+    function handleLocationError(browserHasGeolocation, infoWindow, userPos) {
+        infoWindow.setPosition(userPos);
         infoWindow.setContent(browserHasGeolocation ?
             'Error: The Geolocation service failed.' :
             'Error: Your browser doesn\'t support geolocation.');
@@ -129,8 +132,8 @@
                 '<h2 id="infoWindowHeading" class="infoWindowHeading">' +
                 '<a href="/spots/' + marker.id + '">' + marker.name + '</a></h2>' +
                 '<div id="infoWindowContent" class="infoWindowContent">' +
-                '<p>' + marker.description +
-                '</p></div>' +
+                '<p>' + marker.description + '</p>' +
+                '<p><a href="https://www.google.com/maps/dir/?api=1&destination='+ marker.latitude + ',' + marker.longitude + '">Directions</a></p>' + '</div>' +
                 '</div>';
             infowindow.marker = marker;
             infowindow.setContent(infoWindowContent);
