@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "spot_type"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
+    t.string "web_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_spots_on_user_id"
