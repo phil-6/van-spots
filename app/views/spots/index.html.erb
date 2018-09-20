@@ -1,38 +1,35 @@
-<div class="container">
-  <header>
-    <div class="finder-header">
+<div class="spots-index">
 
-      <h1> <span class="headingBrandVan">Van</span> <span class="headingBrandSpots">Spots</span> </h1>
-      <% if user_signed_in? %>
-        <%= link_to "Create Spot", new_spot_path, class: 'btn btn-sm btn-primary' %>
-      <% end %>
-      <hr />
-    </div>
-  </header>
+  <div class="finder-header">
+    <h1> <span class="headingBrandVan">Van</span> <span class="headingBrandSpots">Spots</span> </h1>
+    <% if user_signed_in? %>
+      <%= link_to "Create Spot", new_spot_path, class: 'btn btn-sm btn-primary' %>
+    <% end %>
+    <hr />
+  </div>
 
-
-  <div class="">
+  <div class="card-columns">
     <% @spots.each do |spot| %>
-      <div class="col-xs-12">
-        <div class="text-center">
-          <h2><%= spot.name %></h2>
-          <h5><%= spot.spot_type %></h5>
-          <h6><%= spot.created_at.strftime('%b %d, %Y') %></h6>
-          <h6>Created By: <%= spot.user.username %></h6>
-
-        </div>
-
-        <div>
-          <%= spot.description %>
-        </div>
-
-        <% if user_signed_in? %>
-          <div class="text-center">
-            <%= link_to "More Info", spot_path(spot) %>
+      <div class="card">
+          <div class="card-header text-center <%= spot.spot_type %>">
+            <h2 class="card-title"><%= spot.name %></h2>
+            <h5><%= spot.spot_type %></h5>
           </div>
-        <% end %>
-        <br>
+
+          <div class="card-body">
+            <h6>Created By: <%= spot.user.username %> on <%= spot.created_at.strftime('%b %d, %Y') %></h6>
+            <h6>Score: <%= (spot.ratings.map(&:score).sum.to_f / spot.ratings.count).round(1) %>/10</h6>
+            <%= spot.description %>
+          </div>
+
+          <% if user_signed_in? %>
+            <div class="text-center">
+              <%= link_to "More Info", spot_path(spot) %>
+            </div>
+          <br />
+          <% end %>
       </div>
     <% end %>
   </div>
+
 </div>

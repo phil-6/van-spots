@@ -1,0 +1,63 @@
+@import "variables";
+#overboot {
+  .finder-header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+  }
+  .spots-index {
+    max-width: 90%;
+    margin:auto;
+  }
+
+  .Free.Spot {
+    background-color: lighten(purple, 70%);
+  }
+
+  .Paid.Spot, .Campsite {
+    background-color: lighten(green, 70%);
+  }
+
+  .MTB.Spot, .Kayaking.Spot, .Surf.Spot {
+    background-color: lighten(blue, 70%);
+  }
+
+  .Climbing.Spot {
+    background-color: lighten(orange, 40%);
+  }
+
+  .Toilet, .Shower {
+    background-color: lighten(yellow, 40%);
+  }
+
+
+  .spots-index::before{
+    /*min-height: auto;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: image-url('van_in_north_wales.JPG');
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    //color: $notquitewhite;
+
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -250px;
+    width: 100%;
+    height: 150%;
+    z-index: -1;
+    opacity: 0.9;
+  }
+
+}
