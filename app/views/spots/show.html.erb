@@ -7,7 +7,7 @@
           <h6>Created By: <%= @spot.user.username %></h6>
           <h6>Score: <%= (@spot.ratings.map(&:score).sum.to_f / @spot.ratings.count).round(1) %>/10</h6>
           <% if @spot.web_link.present? %><h6><%= link_to 'External Info', @spot.web_link %></h6><% end %>
-
+          <h6><%= link_to 'Directions', 'https://www.google.com/maps/dir/?api=1&destination='+@spot.latitude.to_s+','+@spot.longitude.to_s, target: :_blank %></h6>
         </div>
 
         <div class="text-center">
