@@ -41,6 +41,50 @@
          fullscreenControl: false
          });*/
 
+        /**
+         ==========
+          Icons
+         ==========
+         */
+
+
+
+        var iconBase = 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/';
+        var icons = {
+            'Free Spot': {
+                icon: iconBase + 'marker_purple.png'
+            },
+            'Paid Spot': {
+                icon: iconBase + 'marker_green$.png'
+            },
+            'Campsite': {
+                icon: iconBase + 'marker_green^.png'
+            },
+            'MTB Spot': {
+                icon: iconBase + 'marker_blueM.png'
+            },
+            'Climbing Spot': {
+                icon: iconBase + 'marker_orangeC.png'
+            },
+            'Kayaking Spot': {
+                icon: iconBase + 'marker_blueB.png'
+            },
+            'Surf Spot': {
+                icon: iconBase + 'marker_blueS.png'
+            },
+            'Toilet': {
+                icon: iconBase + 'marker_yellowT.png'
+            },
+            'Shower': {
+                icon: iconBase + 'marker_yellowS.png'
+            },
+            'User': {
+                icon: iconBase + 'marker_blackV.png'
+            },
+            'New': {
+                icon: iconBase + 'marker_white+.png'
+            }
+        };
 
         /**
          ==========
@@ -62,6 +106,7 @@
                     name: data.name,
                     description: data.description,
                     type: data.spot_type,
+                    icon: icons[data.spot_type].icon,
                     animation: google.maps.Animation.DROP
                 });
 
@@ -106,6 +151,7 @@
                 userMarker = new google.maps.Marker({
                     position: userPos,
                     animation: google.maps.Animation.DROP,
+                    icon: icons['User'].icons,
                     map: map
                 });
                 userInfoWindow.setContent('You are here.');
@@ -140,6 +186,7 @@
             } else {
                 newMarker = new google.maps.Marker({
                     position: location,
+                    icon: icons['New'].icon,
                     map: map
                 });
             }
