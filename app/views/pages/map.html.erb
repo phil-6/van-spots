@@ -190,8 +190,6 @@
                     map: map
                 });
             }
-            console.log( location.lat());
-
             var newMarkerInfoWindowContent = '<div id="content">' +
                 '<a href="/spots/new?latitude=' + location.lat() +
                 '&longitude=' + location.lng() + '"> Add Spot Here </a>' +
@@ -242,7 +240,6 @@
         // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker !== marker) {
             //add information to info window
-            console.log( marker);
             var infoWindowContent = '<div id="content">' +
                 '<h2 id="infoWindowHeading" class="infoWindowHeading">' +
                 '<a href="/spots/' + marker.id + '">' + marker.name + '</a></h2>' +
