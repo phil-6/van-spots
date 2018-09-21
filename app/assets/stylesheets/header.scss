@@ -1,17 +1,19 @@
 @import "variables";
 #overboot {
-  header, header .home-content {
-    position: relative;
+  header .home-content {
+    position: absolute;
     width: 100%;
-    text-align: center;
-  }
-
-  header {
-    position: relative;
     height: 100%;
+    text-align: center;
+    padding: 100px 15px;
   }
 
-  header::before{
+  //header {
+  //  position: relative;
+  //  height: 100%;
+  //}
+
+  header .cover{
     /*min-height: auto;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -28,20 +30,15 @@
 
     //color: $notquitewhite;
 
-    content: ' ';
-    display: block;
+    //content: ' ';
+    //display: block;
     position: absolute;
-    left: 0;
+    //left: 0;
     top: -250px;
     width: 100%;
     height: 150%;
     z-index: -1;
     opacity: 0.9;
-  }
-
-
-  header .home-content {
-    padding: 100px 15px;
 
   }
 
