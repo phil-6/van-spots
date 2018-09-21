@@ -63,15 +63,14 @@
     font-weight: 300;
     font-family: $font;
     color: $ink;
-    font-size: 20px;
-    margin-bottom: 50px;
+    font-size: 18px;
   }
 
   .support-message{
     background-color: $whitetransparent;
     border-radius: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
+    padding: 12px;
 
     a {
       color: $brandprimary;
