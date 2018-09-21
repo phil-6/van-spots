@@ -49,40 +49,40 @@
 
 
 
-        var iconBase = 'https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/';
+        var iconBase = '/assets/map-marker-';
         var icons = {
             'Free Spot': {
-                icon: iconBase + 'marker_purple.png'
+                icon: iconBase + 'purple.png'
             },
             'Paid Spot': {
-                icon: iconBase + 'marker_green$.png'
+                icon: iconBase + 'orange.png'
             },
             'Campsite': {
-                icon: iconBase + 'marker_greenC.png'
+                icon: iconBase + 'darker-orange.png'
             },
             'MTB Spot': {
-                icon: iconBase + 'marker_blueM.png'
+                icon: iconBase + 'blue.png'
             },
             'Climbing Spot': {
-                icon: iconBase + 'marker_orangeC.png'
+                icon: iconBase + 'lighter-blue.png'
             },
             'Kayaking Spot': {
-                icon: iconBase + 'marker_blueB.png'
+                icon: iconBase + 'darker-blue.png'
             },
             'Surf Spot': {
-                icon: iconBase + 'marker_blueS.png'
+                icon: iconBase + 'sky-blue.png'
             },
             'Toilet': {
-                icon: iconBase + 'marker_yellowT.png'
+                icon: iconBase + 'green.png'
             },
             'Shower': {
-                icon: iconBase + 'marker_yellowS.png'
+                icon: iconBase + 'darker-green.png'
             },
             'User': {
-                icon: iconBase + 'marker_blackV.png'
+                icon: iconBase + 'ink.png'
             },
             'New': {
-                icon: iconBase + 'marker_white+.png'
+                icon: iconBase + 'lighter-ink.png'
             }
         };
 
@@ -151,7 +151,7 @@
                 userMarker = new google.maps.Marker({
                     position: userPos,
                     animation: google.maps.Animation.DROP,
-                    icon: icons['User'].icons,
+                    icon: icons['User'].icon,
                     map: map
                 });
                 userInfoWindow.setContent('You are here.');
