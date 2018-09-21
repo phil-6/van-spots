@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get '/map',             to: 'pages#map'
   get '/api/spots',       to: 'spots#api_index'
 
+  get '/about',           to: 'pages#about'
+  get '/how-to',          to: 'pages#how_to'
+
 end
