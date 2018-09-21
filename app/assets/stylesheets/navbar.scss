@@ -55,5 +55,9 @@
       font-size: 13px;
     }
 
+    @media only screen and (max-width: 768px ){
+      background-color: $skyblue;
+    }
+
   }
 }
