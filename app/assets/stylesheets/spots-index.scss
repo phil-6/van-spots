@@ -12,24 +12,41 @@
   }
 
   .Free.Spot {
-    background-color: lighten(purple, 70%);
+    border-color: $darkerpurple;
+  }
+  .Free.Spot .card-header{
+    background-color: $darkerpurple;
+    border-color: $darkerpurple;
+    color: $notquitewhite;
   }
 
   .Paid.Spot, .Campsite {
-    background-color: lighten(green, 70%);
+    border-color: $darkerorange;
+  }
+  .Paid.Spot .card-header, .Campsite .card-header {
+    background-color: $darkerorange;
+    border-color: $darkerorange;
+    color: $notquitewhite;
   }
 
-  .MTB.Spot, .Kayaking.Spot, .Surf.Spot {
-    background-color: lighten(blue, 70%);
+  .MTB.Spot, .Kayaking.Spot, .Surf.Spot, .Climbing.Spot {
+    border-color: $darkerblue;
   }
-
-  .Climbing.Spot {
-    background-color: lighten(orange, 40%);
+  .MTB.Spot .card-header, .Kayaking.Spot .card-header, .Surf.Spot .card-header, .Climbing.Spot .card-header {
+    background-color: $darkerblue;
+    border-color: $darkerblue;
+    color: $notquitewhite;
   }
 
   .Toilet, .Shower {
-    background-color: lighten(yellow, 40%);
+    border-color: $darkergreen;
   }
+  .Toilet .card-header, .Shower .card-header{
+    background-color: $darkergreen;
+    border-color: $darkergreen;
+    color: $notquitewhite;
+  }
+
 
 
   .spots-index::before{

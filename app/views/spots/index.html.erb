@@ -10,8 +10,8 @@
 
   <div class="card-columns">
     <% @spots.each do |spot| %>
-      <div class="card">
-          <div class="card-header text-center <%= spot.spot_type %>">
+      <div class="card <%= spot.spot_type %>">
+          <div class="card-header text-center" >
             <h2 class="card-title"><%= spot.name %></h2>
             <h5><%= spot.spot_type %></h5>
           </div>
