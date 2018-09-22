@@ -20,21 +20,20 @@ hr {
   max-width: 50px;
 }
 
-.bg-primary hr,
-.bg-primarygrad hr,
-  hr.light {
-  border-color: $notquitewhite;
-}
-
 #overboot {
   .container {
-    padding-top: 80px;
-    //padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
 .reviews-container {
   max-width: 90%;
   margin: auto;
+}
+
+.bg-orange {
+  background-color: $brandsecondary;
+  color: $notquitewhite;
 }
 
