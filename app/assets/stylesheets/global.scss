@@ -31,22 +31,22 @@ hr {
   max-width: 90%;
   margin: auto;
 }
-
+h1{
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 80px;
+  background-image: image-url('orangepurple.png');
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
+}
 .bg-orange {
   background-color: $brandsecondary;
   color: $notquitewhite;
 
-  h1{
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 80px;
-    background-image: image-url('orangepurple.png');
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-attachment: fixed;
-  }
+
 
   .support-message{
     background-color: $whitetransparent;
