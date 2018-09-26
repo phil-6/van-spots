@@ -37,29 +37,20 @@ h1{
   margin-top: 0;
   margin-bottom: 0;
   font-size: 80px;
-  background-image: image-url('orangepurple.png');
+  background-image: image-url('purpleabstract.jpg');
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-attachment: fixed;
 }
 .bg-orange {
   background-color: $brandsecondary;
   color: $notquitewhite;
-
-
-
-  .support-message{
-    background-color: $whitetransparent;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    a {
-      color: $brandprimary;
-      text-decoration: none;
-    }
-    a:hover {
-      color: $brandsecondary;
-      transition: .35s;
-    }
+  a {
+    color: $ink;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $brandprimary;
+    transition: .35s;
   }
 }
 
