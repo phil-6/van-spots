@@ -39,16 +39,16 @@
       text-align: center;
     }
 
-    .home-content {
-      padding: 100px 15px;
-    }
-
     .home-content .home-content-inner h1 {
       font-weight: 900;
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 50px;
+      font-size: 80px;
+      background-image: image-url('orangepurple.png');
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-attachment: fixed;
       /*color: #639;*/
       /*text-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
     }
@@ -64,31 +64,24 @@
       font-size: 20px;
       margin-bottom: 50px;
     }
-  }
-
-  .support-message{
-    background-color: $whitetransparent;
-    border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
-    a {
-      color: $brandprimary;
-      text-decoration: none;
-    }
-    a:hover {
-      color: $brandsecondary;
-      transition: .35s;
+    
+    @media only screen and (min-width: 576px ) {
+      .home-content {
+        padding: 100px 15px;
+      }
     }
   }
 
 
-  .headingBrandVan {
-    color: $brandprimary;
-    display: inline;
-  }
-  .headingBrandSpots {
-    color: $brandsecondary;
-    display: inline;
-  }
+
+
+
+  //.headingBrandVan {
+  //  color: $brandprimary;
+  //  display: inline;
+  //}
+  //.headingBrandSpots {
+  //  color: $brandsecondary;
+  //  display: inline;
+  //}
 }
