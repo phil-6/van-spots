@@ -21,22 +21,23 @@
 
   <%= form_for @rating, url: {action: "create"} do |rating_form| %>
     <div class="form-group">
-      <%= rating_form.label :score %><br/>
+      <%= rating_form.label :score %>
       <%= rating_form.select(:score,
                              options_for_select((1..10).step(1),5),
                              {include_blank: false,
                               include_hidden: false},
                              {:class => 'form-control'}) %>
+
     </div>
 
-    <div class="form-group">
-      <%= rating_form.label :review_title %><br/>
-      <%= rating_form.text_field :review_title, class: 'form-control', placeholder: '(Optional)' %>
+    <div class="form-group floating-label">
+      <%= rating_form.text_field :review_title, class: 'form-control', placeholder: 'Review Title (Optional)' %>
+      <%= rating_form.label :review_title %>
     </div>
 
-    <div class="form-group">
-      <%= rating_form.label :review_body %><br/>
-      <%= rating_form.text_area :review_body, class: 'form-control', placeholder: '(Optional)' %>
+    <div class="form-group floating-label">
+      <%= rating_form.text_area :review_body, class: 'form-control', placeholder: 'Review Body (Optional)' %>
+      <%= rating_form.label :review_body %>
     </div>
 
     <%= rating_form.hidden_field :spot_id, value: @spot.id %>
