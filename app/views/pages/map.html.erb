@@ -154,7 +154,7 @@
                     icon: icons['User'].icon,
                     map: map
                 });
-                userInfoWindow.setContent('You are here.');
+                userInfoWindow.setContent('<div class="text-center"><strong>You are here.</strong><br />' + userPos.lat + ', ' + userPos.lng + '</div>');
                 userMarker.addListener('click', function(){
                     userInfoWindow.open(map, userMarker)
                 });
@@ -192,8 +192,9 @@
             }
             var newMarkerInfoWindowContent = '<div id="content">' +
                 '<a href="/spots/new?latitude=' + location.lat() +
-                '&longitude=' + location.lng() + '"> Add Spot Here </a>' +
-                '</div>';
+                '&longitude=' + location.lng() + '"><strong> Add Spot Here </strong></a>' +
+                '<br />Lat: ' + location.lat() + ', ' +
+                '<br />Lng: ' + location.lng() + '</div>';
             newMarkerInfoWindow.setContent(newMarkerInfoWindowContent);
             newMarkerInfoWindow.open(map, newMarker);
             newMarker.addListener('click', function(){
