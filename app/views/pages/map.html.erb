@@ -105,6 +105,7 @@
                     id: data.id,
                     name: data.name,
                     description: data.description,
+                    average_rating: data.average_rating,
                     type: data.spot_type,
                     icon: icons[data.spot_type].icon,
                     animation: google.maps.Animation.DROP
@@ -245,7 +246,7 @@
                 '<h2 id="infoWindowHeading" class="infoWindowHeading">' +
                 '<a href="/spots/' + marker.id + '">' + marker.name + '</a></h2>' +
                 '<div id="infoWindowContent" class="infoWindowContent">' +
-                '<h6>' + marker.type + '</h6>' +
+                '<h6>' + marker.type + ' - ' + marker.average_rating + '/10</h6>' +
                 '<p>' + marker.description + '</p>' +
                 '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
                 + marker.position.lat() + ','

@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
   # GET /api/spots
   def api_index
     @spots = Spot.all
-    render json: @spots
+    render json: @spots.as_json(methods: [:average_rating])
   end
 
   # GET /spots/:id
