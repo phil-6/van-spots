@@ -30,7 +30,14 @@ hr {
 .reviews-container {
   max-width: 90%;
   margin: auto;
+  .card {
+    border-width: 1px;
+  }
+  .card-header {
+    border-width: 1px;
+  }
 }
+
 h1{
   font-weight: 900;
   text-transform: uppercase;

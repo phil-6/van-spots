@@ -48,7 +48,7 @@
           <% if rating.review_title? %>
             <div class="card <% if rating.score < 3 %>border-danger<% elsif rating.score < 6 %>border-warning<% elsif rating.score < 8 %>border-info<%else %>border-success<% end %>">
 
-              <div class="card-header <% if rating.score < 3 %>border-danger<% elsif rating.score < 6 %>border-warning<% elsif rating.score < 8 %>border-info<%else %>border-success<% end %>">
+              <div class="card-header <% if rating.score < 3 %>border-danger alert-danger<% elsif rating.score < 6 %>border-warning alert-warning<% elsif rating.score < 8 %>border-info alert-info<%else %>border-success alert-success<% end %>">
                 <h5 class="text-center"> <%= rating.score %>/10</h5>
               </div>
 
