@@ -364,7 +364,7 @@ MarkerClusterer.prototype.calculator_ = function(markers, numStyles) {
     var count = markers.length;
     var dv = count;
     while (dv !== 0) {
-        dv = parseInt(dv / 10, 10);
+        dv = parseInt(dv / 6, 10);
         index++;
     }
 
