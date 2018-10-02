@@ -45,11 +45,11 @@ h1{
   background-color: $brandsecondary;
   color: $notquitewhite;
   a {
-    color: $ink;
+    color: $brandprimary;
     text-decoration: none;
   }
   a:hover {
-    color: $brandprimary;
+    color: $ink;
     transition: .35s;
   }
 }
