@@ -13,12 +13,11 @@
       <div class="card <%= spot.spot_type %>">
           <div class="card-header text-center" >
             <h2 class="card-title"><%= spot.name %></h2>
-            <h5><%= spot.spot_type %></h5>
+            <h5><%= spot.spot_type %> - <%= spot.average_rating %>/10</h5>
           </div>
 
           <div class="card-body">
             <h6>Created By: <%= spot.user.username %> on <%= spot.created_at.strftime('%b %d, %Y') %></h6>
-            <h6>Score: <%= spot.average_rating %>/10</h6>
             <%= spot.description %>
           </div>
 
