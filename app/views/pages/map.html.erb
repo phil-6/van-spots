@@ -132,8 +132,11 @@
         map.controls[google.maps.ControlPosition.LEFT_CENTER].push(mapFilterControlsDiv);
         // Add a marker clusterer to manage the markers.
         markerCluster = new MarkerClusterer(map, [],
-            {imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"});
-//../resources/images/markerClusterer/m"
+            {
+                imagePath: '/assets/map-marker-mc',
+                gridSize: 40
+
+            });
         /**
          ==========
          Show User Location
@@ -443,10 +446,10 @@
 
 
 
-
+<!--Marker Clusterer-->
 <!--<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>-->
-<!--"../js/markerClusterer/markerclusterer.js"-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js"></script>
+<!--<script src="/assets/markerClusterer/markerclusterer.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer.js"></script>-->
 
 
 <script async defer
