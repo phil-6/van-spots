@@ -26,6 +26,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/credentials.yml.enc
+/config/app_environment_variables.rb
 
 # Ignore idea
 /.idea/*

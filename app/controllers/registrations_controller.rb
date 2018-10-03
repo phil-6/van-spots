@@ -9,6 +9,15 @@ class RegistrationsController < Devise::RegistrationsController
     respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
   end
 
+  # CREATE /resource
+  # send email after creation
+  def create
+    super
+    if @user.persisted?
+      UserMailer.with(user: @user).welcome_email.deliver_now
+    end
+  end
+
   private
 
   def sign_up_params

@@ -51,7 +51,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.log_level = :warn
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
@@ -91,4 +91,24 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Send emails when in dev env
+  config.action_mailer.perform_deliveries = true
+
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.smtp_settings = {
+      user_name:      'apikey',
+      password:       ENV["SENDGRID_API_KEY"],
+      domain:         'vanspots.uk',
+      address:        'smtp.sendgrid.net',
+      port:           '587',
+      authentication: :plain,
+      enable_starttls_auto: true
+  }
 end
