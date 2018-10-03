@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # model associations
   has_many :spots, foreign_key: :user_id
-  has_many :ratings, dependent: :destroy, foreign_key: :user_id
+  has_many :ratings, foreign_key: :user_id
 
   # validations
   validates_presence_of :username,
