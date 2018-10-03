@@ -4,9 +4,9 @@
   <%= devise_error_messages! %>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
-    <div class="form-group">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+    <div class="form-group  floating-label">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Account Email'  %>
+      <%= f.label :email, "Account Email" %>
     </div>
 
     <div class="actions form-group">
