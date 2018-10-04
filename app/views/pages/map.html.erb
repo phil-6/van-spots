@@ -271,7 +271,9 @@
                 '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
                 + marker.position.lat() + ','
                 + marker.position.lng() +
-                '">Directions</a></p>' +
+                '">Directions</a>' + '    ' +
+                '<a href="/spots/' + marker.id + '">More Info</a>' +
+                ' </p>' +
                 '</div>' +
                 '</div>';
             infowindow.marker = marker;
