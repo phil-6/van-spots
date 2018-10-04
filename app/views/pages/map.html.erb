@@ -242,11 +242,31 @@
         // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker !== marker) {
             //add information to info window
+            var marker_type;
+            if (marker.type === 'free_spot') {
+                marker_type = 'Free Spot';
+            }else if (marker.type === 'paid_spot') {
+                marker_type = 'Paid Spot';
+            }else if (marker.type === 'campsite') {
+                marker_type = 'Campsite';
+            }else if (marker.type === 'mtb_spot') {
+                marker_type = 'MTB Spot';
+            }else if (marker.type === 'climbing_spot') {
+                marker_type = 'Climbing Spot';
+            }else if (marker.type === 'kayaking_spot') {
+                marker_type = 'Kayaking Spot';
+            }else if (marker.type === 'surf_spot') {
+                marker_type = 'Surf Spot';
+            }else if (marker.type === 'walking_spot') {
+                marker_type = 'Walking Spot';
+            }else{
+                marker_type = 'Unknown Spot Type';
+            }
             var infoWindowContent = '<div id="content">' +
                 '<h2 id="infoWindowHeading" class="infoWindowHeading">' +
                 '<a href="/spots/' + marker.id + '">' + marker.name + '</a></h2>' +
                 '<div id="infoWindowContent" class="infoWindowContent">' +
-                '<h6>' + marker.type + ' - ' + marker.average_rating + '/10</h6>' +
+                '<h6>' + marker_type + ' - ' + marker.average_rating + '/10</h6>' +
                 '<p>' + marker.description + '</p>' +
                 '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
                 + marker.position.lat() + ','
