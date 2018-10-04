@@ -8,8 +8,8 @@
       <% end %>
     </p>
     <div class="form-group floating-label">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
-      <%= f.label :email %>
+      <%= f.text_field :login, autofocus: true, class: 'form-control', placeholder: 'Username or Email' %>
+      <%= f.label :login, "Username or Email"%>
     </div>
 
     <div class="form-group floating-label">

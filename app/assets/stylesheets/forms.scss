@@ -105,6 +105,17 @@
           transform: translateY(-30px);
           opacity: .7;
         }
+        .field_with_errors {
+          label {
+            transform: translateY(-14px);
+            opacity: .7;
+            color: darkred;
+            font-weight: 600;
+          }
+          ::placeholder {
+            opacity: 0;
+          }
+        }
       }
     }
   }
