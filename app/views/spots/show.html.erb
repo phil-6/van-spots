@@ -17,8 +17,8 @@
     <%= @spot.description %>
   </div>
 
-  <!--Edit if Owner-->
-  <% if current_user.id == @spot.user_id%>
+  <!--Edit if Owner or Admin-->
+  <% if current_user.id == @spot.user_id || current_user.admin? %>
     <div class="text-center">
       <%= button_to "Edit Spot", edit_spot_url(@spot), method: :get, class: 'btn btn-sm btn-primary' %>
     </div>
