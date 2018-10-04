@@ -5,7 +5,11 @@ class SpotsController < ApplicationController
 
   # GET /spots
   def index
-    @spots = Spot.all
+    if params[:spot_type]
+      @spots = Spot.where(:spot_type => params[:spot_type])
+    else
+      @spots = Spot.all
+    end
   end
 
   # GET /api/spots
