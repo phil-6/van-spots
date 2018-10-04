@@ -14,7 +14,11 @@ class SpotsController < ApplicationController
 
   # GET /api/spots
   def api_index
-    @spots = Spot.all
+    if params[:spot_type]
+      @spots = Spot.where(:spot_type => params[:spot_type])
+    else
+      @spots = Spot.all
+    end
     render json: @spots.as_json(methods: [:average_rating])
   end
 
