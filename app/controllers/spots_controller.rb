@@ -70,7 +70,7 @@ class SpotsController < ApplicationController
   private
 
   def require_permission
-    if current_user != Spot.find(params[:id]).user
+    unless current_user == Spot.find(params[:id]).user || current_user.admin?
       redirect_to spot_path
     end
   end
