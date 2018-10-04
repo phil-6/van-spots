@@ -27,4 +27,6 @@ class User < ApplicationRecord
   validates_presence_of :username,
                         :email,
                         :description
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 end
