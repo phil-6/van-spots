@@ -10,7 +10,16 @@
   </div>
 
   <div class="text-center">
-    Type: <%= @spot.spot_type %>
+    Type:
+    <% if @spot.spot_type == 'free_spot' %>Free Spot
+    <% elsif @spot.spot_type == 'paid_spot' %>Paid Spot
+    <% elsif @spot.spot_type == 'campsite' %>Campsite
+    <% elsif @spot.spot_type == 'mtb_spot' %>MTB Spot
+    <% elsif @spot.spot_type == 'climbing_spot' %>Climbing Spot
+    <% elsif @spot.spot_type == 'kayaking_spot' %>Kayaking Spot
+    <% elsif @spot.spot_type == 'surf_spot' %>Surf Spot
+    <% elsif @spot.spot_type == 'walking_spot' %>Walking Spot
+    <% else %>Spot Type Unknown<% end %>
   </div>
 
   <div>

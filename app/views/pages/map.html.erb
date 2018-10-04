@@ -51,37 +51,34 @@
 
         var iconBase = '/assets/map-marker-';
         var icons = {
-            'Free Spot': {
+            'free_spot': {
                 icon: iconBase + 'purple.png'
             },
-            'Paid Spot': {
+            'paid_spot': {
                 icon: iconBase + 'orange.png'
             },
-            'Campsite': {
+            'campsite': {
                 icon: iconBase + 'darker-orange.png'
             },
-            'MTB Spot': {
+            'mtb_spot': {
                 icon: iconBase + 'blue.png'
             },
-            'Climbing Spot': {
+            'climbing_spot': {
                 icon: iconBase + 'lighter-blue.png'
             },
-            'Kayaking Spot': {
+            'kayaking_spot': {
                 icon: iconBase + 'darker-blue.png'
             },
-            'Surf Spot': {
+            'surf_spot': {
                 icon: iconBase + 'sky-blue.png'
             },
-            'Toilet': {
+            'walking_spot': {
                 icon: iconBase + 'green.png'
             },
-            'Shower': {
-                icon: iconBase + 'darker-green.png'
-            },
-            'User': {
+            'user': {
                 icon: iconBase + 'ink.png'
             },
-            'New': {
+            'new': {
                 icon: iconBase + 'lighter-ink.png'
             }
         };
@@ -155,7 +152,7 @@
                 userMarker = new google.maps.Marker({
                     position: userPos,
                     animation: google.maps.Animation.DROP,
-                    icon: icons['User'].icon,
+                    icon: icons['user'].icon,
                     map: map
                 });
                 userInfoWindow.setContent('<div class="text-center"><strong>You are here.</strong><br />' + userPos.lat + ', ' + userPos.lng + '</div>');
@@ -190,7 +187,7 @@
             } else {
                 newMarker = new google.maps.Marker({
                     position: location,
-                    icon: icons['New'].icon,
+                    icon: icons['new'].icon,
                     map: map
                 });
             }

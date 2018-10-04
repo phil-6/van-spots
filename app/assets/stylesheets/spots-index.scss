@@ -11,37 +11,37 @@
     margin:auto;
   }
 
-  .Free.Spot {
+  .free_spot {
     border-color: $darkerpurple;
   }
-  .Free.Spot .card-header{
+  .free_spot .card-header{
     background-color: $darkerpurple;
     border-color: $darkerpurple;
     color: $notquitewhite;
   }
 
-  .Paid.Spot, .Campsite {
+  .paid_spot, .campsite {
     border-color: $darkerorange;
   }
-  .Paid.Spot .card-header, .Campsite .card-header {
+  .paid_spot .card-header, .campsite .card-header {
     background-color: $darkerorange;
     border-color: $darkerorange;
     color: $notquitewhite;
   }
 
-  .MTB.Spot, .Kayaking.Spot, .Surf.Spot, .Climbing.Spot {
+  .mtb_spot, .kayaking_spot, .surf_spot, .climbing_spot {
     border-color: $darkerblue;
   }
-  .MTB.Spot .card-header, .Kayaking.Spot .card-header, .Surf.Spot .card-header, .Climbing.Spot .card-header {
+  .mtb_spot .card-header, .kayaking_spot .card-header, .surf_spot .card-header, .climbing_spot .card-header {
     background-color: $darkerblue;
     border-color: $darkerblue;
     color: $notquitewhite;
   }
 
-  .Toilet, .Shower {
+  .walking_spot {
     border-color: $darkergreen;
   }
-  .Toilet .card-header, .Shower .card-header{
+  .walking_spot .card-header{
     background-color: $darkergreen;
     border-color: $darkergreen;
     color: $notquitewhite;
