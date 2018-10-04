@@ -1,5 +1,18 @@
 @import "variables";
 #overboot {
+
+  .filter-buttons {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .card {
+    display: none;
+  }
+  .show {
+    display: inline-block;
+  }
+
   .finder-header {
     position: relative;
     width: 100%;

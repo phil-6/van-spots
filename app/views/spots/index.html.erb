@@ -8,6 +8,16 @@
     <hr />
   </div>
 
+  <div class="filter-buttons" id="filterButtons">
+    <button class="btn btn-sm active" onclick="filterSelection('all')">Show All</button>
+    <button class="btn btn-sm" onclick="filterSelection('free_spot')">Free Spots</button>
+    <button class="btn btn-sm" onclick="filterSelection('paid_spot')">Paid Spots</button>
+    <button class="btn btn-sm" onclick="filterSelection('mtb_spot')">MTB Spots</button>
+    <button class="btn btn-sm" onclick="filterSelection('climbing_spot')">Climbing Spots</button>
+    <button class="btn btn-sm" onclick="filterSelection('kayaking_spot')">Kayaking Spots</button>
+    <button class="btn btn-sm" onclick="filterSelection('surf_spot')">Surf Spots</button>
+    <button class="btn btn-sm" onclick="filterSelection('walking_spot')">Walking Spots</button>
+  </div>
   <div class="card-columns">
     <% @spots.each do |spot| %>
       <div class="card <%= spot.spot_type %>">
@@ -42,3 +52,9 @@
   </div>
 
 </div>
+
+<script>
+    $( document ).on('turbolinks:load', function() {
+        filterSelection('all');
+    });
+</script>
