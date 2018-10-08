@@ -8,19 +8,28 @@
     <hr />
   </div>
 
-  <div class="filter-buttons" id="filterButtons">
-    <button class="btn btn-sm active" onclick="filterSelection('all')">Show All</button>
-    <button class="btn btn-sm" onclick="filterSelection('free_spot')">Free Spots</button>
-    <button class="btn btn-sm" onclick="filterSelection('paid_spot')">Paid Spots</button>
-    <button class="btn btn-sm" onclick="filterSelection('mtb_spot')">MTB Spots</button>
-    <button class="btn btn-sm" onclick="filterSelection('climbing_spot')">Climbing Spots</button>
-    <button class="btn btn-sm" onclick="filterSelection('kayaking_spot')">Kayaking Spots</button>
-    <button class="btn btn-sm" onclick="filterSelection('surf_spot')">Surf Spots</button>
-    <button class="btn btn-sm" onclick="filterSelection('walking_spot')">Walking Spots</button>
+  <div class="filter-buttons" id="type-filters">
+    <button class="btn btn-sm active" onclick="filterByType('all')">Show All</button>
+    <button class="btn btn-sm" onclick="filterByType('free_spot')">Free Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('paid_spot')">Paid Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('mtb_spot')">MTB Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('climbing_spot')">Climbing Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('kayaking_spot')">Kayaking Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('surf_spot')">Surf Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('walking_spot')">Walking Spots</button>
   </div>
+  <div class="filter-buttons" id="rating-filters">
+    <button class="btn btn-sm active" onclick="filterByRating('all')">All</button>
+    <button class="btn btn-sm" onclick="filterByRating('5')">>5</button>
+    <button class="btn btn-sm" onclick="filterByRating('6')">>6</button>
+    <button class="btn btn-sm" onclick="filterByRating('7')">>7</button>
+    <button class="btn btn-sm" onclick="filterByRating('8')">>8</button>
+    <button class="btn btn-sm" onclick="filterByRating('9')">>9</button>
+  </div>
+
   <div class="card-columns">
     <% @spots.each do |spot| %>
-      <div class="card <%= spot.spot_type %>">
+      <div class="card <%= spot.spot_type %> rating-<%= spot.average_rating.floor %>">
           <div class="card-header text-center" >
             <h2 class="card-title"><%= spot.name %></h2>
             <h5>
@@ -55,6 +64,6 @@
 
 <script>
     $( document ).on('turbolinks:load', function() {
-        filterSelection('all');
+        filterByType('all');
     });
 </script>
