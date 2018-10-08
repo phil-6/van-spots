@@ -1,4 +1,5 @@
 function filterByType(spot_type) {
+    changeActiveButton("spot_type");
     var cards, i;
     cards = document.getElementsByClassName("card");
     if (spot_type === "all") spot_type = "";
@@ -7,10 +8,10 @@ function filterByType(spot_type) {
         removeClass(cards[i], "show");
         if (cards[i].className.indexOf(spot_type) > -1) addClass(cards[i], "show");
     }
-    changeActiveButton("spot_type");
 }
 
 function filterByRating(spot_rating) {
+    changeActiveButton("rating");
     var cards, i;
     cards = document.getElementsByClassName("card");
     if (spot_rating === "all") spot_rating = "";
@@ -21,7 +22,6 @@ function filterByRating(spot_rating) {
             if (cards[i].className.indexOf("rating-" + s) > -1) addClass(cards[i], "show");
         }
     }
-    changeActiveButton("rating");
 }
 
 // Show filtered elements
@@ -50,22 +50,32 @@ function removeClass(element, name) {
 }
 
 function changeActiveButton(button_type) {
-// Add active class to the current control button (highlight it)
-    var btnContainer;
+    // Add active class to the current control button (highlight it)
+    // Remove active class from inactive buttons
+    var btnContainer, otherContainer;
     if (button_type === "spot_type"){
         btnContainer = document.getElementById("type-filters");
+        otherContainer = document.getElementById("rating-filters");
     }else if (button_type === "rating"){
         btnContainer = document.getElementById("rating-filters");
+        otherContainer = document.getElementById("type-filters");
     }else {
         console.log("button container type not known");
     }
 
     var btns = btnContainer.getElementsByClassName("btn");
+    var otherBtns = otherContainer.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
+            //set clicked button to active
             var current = btnContainer.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
+
+            //set active button from other row to inactive
+            var otherCurrent = otherContainer.getElementsByClassName("active");
+            otherCurrent[0].className = otherCurrent[0].className.replace(" active", "");
+            otherBtns[0].className += " active";
         });
     }
 }
