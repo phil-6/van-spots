@@ -1,5 +1,6 @@
 function filterByType(spot_type) {
     changeActiveButton("spot_type");
+    var otherFilter = document.getElementById("rating-filters").getElementsByClassName("active")[0].innerText;
     var cards, i;
     cards = document.getElementsByClassName("card");
     if (spot_type === "all") spot_type = "";
@@ -8,6 +9,7 @@ function filterByType(spot_type) {
         removeClass(cards[i], "show");
         if (cards[i].className.indexOf(spot_type) > -1) addClass(cards[i], "show");
     }
+
 }
 
 function filterByRating(spot_rating) {
