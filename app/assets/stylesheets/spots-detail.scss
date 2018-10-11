@@ -1,0 +1,40 @@
+@import "variables";
+#overboot {
+  .show-spot {
+    .container {
+      padding-bottom: 0;
+    }
+
+    .button-group {
+      margin-bottom: 5px;
+    }
+
+    .spot-map {
+      height: 600px;
+    }
+
+    .ninety-container {
+      max-width: 90%;
+      margin: auto;
+      padding-top: 60px;
+      .card {
+        border-width: 1px;
+        display: inline-block;
+      }
+      .card-header {
+        border-width: 1px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .container {
+        padding-top: 0;
+      }
+      .ninety-container {
+        .card {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

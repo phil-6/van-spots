@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :api_index]
-  before_action :set_spot, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :api_index, :api_show]
+  before_action :set_spot, only: [:show,:api_show, :update, :destroy]
   before_action :require_permission, only: [:edit, :update, :destroy]
 
   # GET /spots
@@ -25,6 +25,12 @@ class SpotsController < ApplicationController
   # GET /spots/:id
   def show
     @spot
+  end
+
+  # GET /api/spots/:id
+  def api_show
+    @spot
+    render json: @spot.as_json(methods: [:average_rating])
   end
 
   # GET /spots/new
