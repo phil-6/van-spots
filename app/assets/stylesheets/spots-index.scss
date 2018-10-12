@@ -104,22 +104,37 @@
     border-color: $darkerorange;
     color: $notquitewhite;
   }
-
-  .mtb_spot, .kayaking_spot, .surf_spot, .climbing_spot {
+  .mtb_spot{
+    border-color: $darkergreen;
+  }
+  .mtb_spot .card-header{
+     background-color: $darkergreen;
+     border-color: $darkergreen;
+     color: $notquitewhite;
+  }
+  .climbing_spot {
+    border-color: $green;
+  }
+  .climbing_spot .card-header{
+    background-color: $green;
+    border-color: $green;
+    color: $notquitewhite;
+  }
+  .surf_spot, .kayaking_spot {
     border-color: $darkerblue;
   }
-  .mtb_spot .card-header, .kayaking_spot .card-header, .surf_spot .card-header, .climbing_spot .card-header {
+  .surf_spot .card-header, .kayaking_spot .card-header {
     background-color: $darkerblue;
     border-color: $darkerblue;
     color: $notquitewhite;
   }
 
   .bad_spot {
-    border-color: $darkergreen;
+    border-color: darkred;
   }
   .bad_spot .card-header{
-    background-color: $darkergreen;
-    border-color: $darkergreen;
+    background-color: darkred;
+    border-color: darkred;
     color: $notquitewhite;
   }
 

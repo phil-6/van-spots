@@ -61,10 +61,10 @@
                 icon: iconBase + 'darker-orange.png'
             },
             'mtb_spot': {
-                icon: iconBase + 'blue.png'
+                icon: iconBase + 'darker-green.png'
             },
             'climbing_spot': {
-                icon: iconBase + 'lighter-blue.png'
+                icon: iconBase + 'green.png'
             },
             'kayaking_spot': {
                 icon: iconBase + 'darker-blue.png'
@@ -73,7 +73,7 @@
                 icon: iconBase + 'sky-blue.png'
             },
             'bad_spot': {
-                icon: iconBase + 'green.png'
+                icon: iconBase + 'red.png'
             },
             'user': {
                 icon: iconBase + 'ink.png'
@@ -95,7 +95,7 @@
         $.getJSON(apiUrl, function (json1) {
             $.each(json1, function (key, data) {
                 var position = new google.maps.LatLng(data.latitude, data.longitude);
-
+                console.log(data.spot_type);
                 var marker = new google.maps.Marker({
                     map: map,
                     position: position,
@@ -107,6 +107,7 @@
                     icon: icons[data.spot_type].icon,
                     animation: google.maps.Animation.DROP
                 });
+
 
                 // Push the marker to our array of markers.
                 markers.push(marker);
