@@ -35,10 +35,12 @@
       <% end %>
       <%= link_to "Rate Spot", new_spot_rating_path(@spot), class: 'btn btn-sm btn-primary' %>
     </div>
-    <div class="button group text-center">
-<!--      <a href="#map-title" class="btn btn-sm btn-info">Go to Map</a>-->
-      <a href="#reviews" class="btn btn-sm btn-info">Go to Reviews</a>
-    </div>
+    <% if @spot.ratings.map(&:review_title).any?(&:present?) %>
+      <div class="button group text-center">
+        <!--<a href="#map-title" class="btn btn-sm btn-info">Go to Map</a>-->
+        <a href="#reviews" class="btn btn-sm btn-info">Go to Reviews</a>
+      </div>
+    <% end %>
 
     <div>
       <%= @spot.description %>
