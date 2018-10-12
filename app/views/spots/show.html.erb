@@ -22,7 +22,7 @@
       <% elsif @spot.spot_type == 'climbing_spot' %>Climbing Spot
       <% elsif @spot.spot_type == 'kayaking_spot' %>Kayaking Spot
       <% elsif @spot.spot_type == 'surf_spot' %>Surf Spot
-      <% elsif @spot.spot_type == 'walking_spot' %>Walking Spot
+      <% elsif @spot.spot_type == 'bad_spot' %>Bad Spot
       <% else %>Spot Type Unknown
       <% end %></strong>
     </h6>
@@ -180,8 +180,8 @@
             'surf_spot': {
                 icon: iconBase + 'sky-blue.png'
             },
-            'walking_spot': {
-                icon: iconBase + 'green.png'
+            'bad_spot': {
+                icon: iconBase + 'red.png'
             },
             'user': {
                 icon: iconBase + 'ink.png'
@@ -327,8 +327,8 @@
                 marker_type = 'Kayaking Spot';
             }else if (marker.type === 'surf_spot') {
                 marker_type = 'Surf Spot';
-            }else if (marker.type === 'walking_spot') {
-                marker_type = 'Walking Spot';
+            }else if (marker.type === 'bad_spot') {
+                marker_type = 'Bad Spot';
             }else{
                 marker_type = 'Unknown Spot Type';
             }

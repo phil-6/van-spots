@@ -16,7 +16,7 @@
     <button class="btn btn-sm" onclick="filterByType('climbing_spot')">Climbing Spots</button>
     <button class="btn btn-sm" onclick="filterByType('kayaking_spot')">Kayaking Spots</button>
     <button class="btn btn-sm" onclick="filterByType('surf_spot')">Surf Spots</button>
-    <button class="btn btn-sm" onclick="filterByType('walking_spot')">Walking Spots</button>
+    <button class="btn btn-sm" onclick="filterByType('bad_spot')">Bad Spots</button>
   </div>
   <div class="filter-buttons" id="rating-filters">
     <button class="btn btn-sm active" onclick="filterByRating('all')">All</button>
@@ -45,7 +45,7 @@
               <% elsif spot.spot_type == 'climbing_spot' %>Climbing Spot
               <% elsif spot.spot_type == 'kayaking_spot' %>Kayaking Spot
               <% elsif spot.spot_type == 'surf_spot' %>Surf Spot
-              <% elsif spot.spot_type == 'walking_spot' %>Walking Spot
+              <% elsif spot.spot_type == 'bad_spot' %>Bad Spot
               <% else %>Spot Type Unknown<% end %> - <%= spot.average_rating %>/10
             </h5>
           </div>

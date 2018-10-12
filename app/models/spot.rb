@@ -16,6 +16,6 @@ class Spot < ApplicationRecord
                         :latitude,
                         :longitude
   validates :spot_type, inclusion: {
-      in: %w(free_spot paid_spot campsite mtb_spot climbing_spot kayaking_spot surf_spot walking_spot),
+      in: %w(free_spot paid_spot campsite mtb_spot climbing_spot kayaking_spot surf_spot bad_spot),
       message: "%{value} is not a valid spot type" }
 end
