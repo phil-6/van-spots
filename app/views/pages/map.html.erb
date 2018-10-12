@@ -95,7 +95,6 @@
         $.getJSON(apiUrl, function (json1) {
             $.each(json1, function (key, data) {
                 var position = new google.maps.LatLng(data.latitude, data.longitude);
-                console.log(data.spot_type);
                 var marker = new google.maps.Marker({
                     map: map,
                     position: position,
