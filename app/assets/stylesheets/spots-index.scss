@@ -8,6 +8,7 @@
     .btn {
       background-color: $darkerorange;
       color: $notquitewhite;
+      margin-bottom: 10px;
     }
     .btn:hover{
       background-color: $orange;
@@ -29,12 +30,30 @@
     //-moz-transition: height 500ms ease 0.2s;
     //-o-transition:height 500ms ease 0.2s;
     //transition: height 500ms ease 0.2s;
+    a:hover {
+      text-decoration: none;
+      font-weight: 700;
+      text-shadow: 0 0 16px $whitetransparent;
+      -webkit-transition: 500ms ease 0.2s;
+      -moz-transition: 500ms ease 0.2s;
+      -o-transition: 500ms ease 0.2s;
+      transition: 500ms ease 0.2s;
+    }
+
+
   }
   .show {
     //border-width: 1px;
     //margin-bottom: 12px;
     //height:300px;
     display: inline-block;
+  }
+  @media screen and (max-width: 576px) {
+    .ninety-container {
+      .card {
+        width: 100%;
+      }
+    }
   }
 
   .more-info {
@@ -44,10 +63,16 @@
     -moz-transition: height 500ms ease 0.2s;
     -o-transition:height 500ms ease 0.2s;
     transition: height 500ms ease 0.2s;
+    a:hover {
+      -webkit-transition: initial;
+      -moz-transition: initial;
+      -o-transition:initial;
+      transition: initial;
+    }
   }
   .card:hover {
     .more-info {
-      height:64px;
+      height:48px;
     }
   }
 
