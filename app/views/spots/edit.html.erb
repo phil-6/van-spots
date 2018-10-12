@@ -33,13 +33,12 @@
                                                ['Kayaking Spot', 'kayaking_spot'],
                                                ['Surf Spot','surf_spot'],
                                                ['Walking Spot', 'walking_spot']
-                                              ]),
+                                              ], @spot.spot_type),
                            {include_blank: false,
                             include_hidden: false},
-                           {:class => 'form-control', :selected => 'Free Spot'}) %>
+                           {:class => 'form-control'}) %>
       <%= spot_form.label :spot_type, 'Spot Type' %>
     </div>
-
     <div class="form-group floating-label">
       <%= spot_form.text_area :description, class: 'form-control', :required => true, :placeholder => 'Tell us a bit about this spot. Does it have good views? It is free after a certain time? How many spots are there?'  %>
       <%= spot_form.label :description %>
