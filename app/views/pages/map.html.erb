@@ -268,11 +268,11 @@
                 '<div id="infoWindowContent" class="infoWindowContent">' +
                 '<h6>' + marker_type + ' - ' + marker.average_rating + '/10</h6>' +
                 '<p>' + marker.description + '</p>' +
-                '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
+                '<p><a class="btn btn-sm btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination='
                 + marker.position.lat() + ','
                 + marker.position.lng() +
                 '">Directions</a>' + '    ' +
-                '<a href="/spots/' + marker.id + '">More Info</a>' +
+                '<a  class="btn btn-sm btn-info" href="/spots/' + marker.id + '">More Info</a>' +
                 ' </p>' +
                 '</div>' +
                 '</div>';

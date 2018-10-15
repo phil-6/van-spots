@@ -10,7 +10,8 @@
       <h6>Score: <%= @spot.average_rating %>/10</h6>
       <% if @spot.web_link.present? %><h6><%= link_to 'External Info', @spot.web_link %></h6>
       <% end %>
-      <h6><%= link_to 'Directions', 'https://www.google.com/maps/dir/?api=1&destination=' + @spot.latitude.to_s + ',' + @spot.longitude.to_s, target: :_blank %></h6>
+      <h6><%= link_to 'Directions', 'https://www.google.com/maps/dir/?api=1&destination=' +
+          @spot.latitude.to_s + ',' + @spot.longitude.to_s, target: :_blank %></h6>
     </div>
 
     <h6 class="text-center">
@@ -338,7 +339,7 @@
                 '<div id="infoWindowContent" class="infoWindowContent">' +
                 '<h6>' + marker_type + ' - ' + marker.average_rating + '/10</h6>' +
                 '<p>' + marker.description + '</p>' +
-                '<p><a href="https://www.google.com/maps/dir/?api=1&destination='
+                '<p><a class="btn btn-sm btn-secondary" href="https://www.google.com/maps/dir/?api=1&destination='
                 + marker.position.lat() + ','
                 + marker.position.lng() +
                 '">Directions</a>' +
