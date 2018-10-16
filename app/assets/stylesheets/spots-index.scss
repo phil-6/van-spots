@@ -23,7 +23,7 @@
   .card {
     display: none;
     //height:0;
-    //border-width: 0;
+    border: 0;
     //margin: 0;
     //overflow:hidden;
     //-webkit-transition: height 500ms ease 0.2s;
@@ -87,55 +87,40 @@
     margin:auto;
   }
 
-  .free_spot {
-    border-color: $darkerpurple;
+  .card-header {
+    color: $notquitewhite;
   }
   .free_spot .card-header{
     background-color: $darkerpurple;
-    border-color: $darkerpurple;
-    color: $notquitewhite;
+    background: $purplegrad;
   }
-
-  .paid_spot, .campsite {
-    border-color: $darkerorange;
-  }
-  .paid_spot .card-header, .campsite .card-header {
+  .paid_spot .card-header{
     background-color: $darkerorange;
-    border-color: $darkerorange;
-    color: $notquitewhite;
+    background: $orangegrad;
   }
-  .mtb_spot{
-    border-color: $darkergreen;
+  .campsite .card-header {
+    background-color: $darkerorange;
+    background: $orangegradleft;
   }
   .mtb_spot .card-header{
-     background-color: $darkergreen;
-     border-color: $darkergreen;
-     color: $notquitewhite;
-  }
-  .climbing_spot {
-    border-color: $green;
+    background-color:$green;
+    background: $greengrad;
   }
   .climbing_spot .card-header{
-    background-color: $green;
-    border-color: $green;
-    color: $notquitewhite;
+    background-color:$green;
+    background: $greengradleft;
   }
-  .surf_spot, .kayaking_spot {
-    border-color: $darkerblue;
+  .surf_spot .card-header{
+    background-color:$darkerblue;
+    background: $bluegrad;
   }
-  .surf_spot .card-header, .kayaking_spot .card-header {
-    background-color: $darkerblue;
-    border-color: $darkerblue;
-    color: $notquitewhite;
-  }
-
-  .bad_spot {
-    border-color: darkred;
+  .kayaking_spot .card-header {
+    background-color:$darkerblue;
+    background: $bluegradleft;
   }
   .bad_spot .card-header{
-    background-color: darkred;
-    border-color: darkred;
-    color: $notquitewhite;
+    background-color:red;
+    background: $redgrad;
   }
 
 

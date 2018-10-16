@@ -2,25 +2,45 @@ $font: "Roboto", "Muli", Arial, sans-serif;
 $heading-font: "Josefin Sans", "Muli", Arial, sans-serif;
 
 
-$purple: #663399;
-$darkerpurple: #4B2670;
+$purple: #663399; //RebeccaPurple
+$darkerpurple: Indigo;//#4B2670;
+$pastelpurple: MediumOrchid;//#A06CD5;
+$purplegrad: linear-gradient(to bottom right,$darkerpurple, $pastelpurple);
 $purpletransparent: rgba(102, 51, 153, 0.4);
+
 $lighterink: #161028;
 $ink: #110C1E;
+
 $lighterblue: #2EAEE2;
 $skyblue: #88CBFF;
 $skyblyedarker: #6abdff;
 $skybluetransparent: rgba(136, 203, 255, 0.2);
-$blue: #009DDC;
-$darkerblue: #0073A1;
+$blue: DeepSkyBlue; //#009DDC;
+$darkerblue: RoyalBlue; //#0073A1;
+$pastelblue: MediumTurquoise;//#779ecb;
+$bluegrad: linear-gradient(to bottom right,$darkerblue,$pastelblue);
+$bluegradleft: linear-gradient(to bottom left,$darkerblue,$pastelblue);
+
 $orange: #FF8822;
-$darkerorange: #EE6600;
-$green: #4CB944;
-$darkergreen: #388732;
-$lightgrey: #7C7683;
-$notquitewhite: #f8f9fa;
+$darkerorange: #EE6600; //DarkOrange;
+$pastelorange: #FF9F1C; //Gold;
+$orangegrad: linear-gradient(to bottom right,$darkerorange,$pastelorange);
+//linear-gradient(to left bottom, rgb(255, 219, 111), rgb(246, 146, 89))
+$orangegradleft: linear-gradient(to bottom left,$darkerorange,$pastelorange);
+
+$green:  #4CB944;
+$darkergreen: #388732; //SeaGreen;
+$bluegreen: LightSeaGreen;//#2274A5; //MediumSpringGreen;
+$greengrad: linear-gradient(to bottom right,$green,$bluegreen);
+$greengradleft: linear-gradient(to bottom left,$green,$bluegreen);
+
+$redgrad: linear-gradient(to bottom right, darkred, orangered);
+
+
+$lightgrey: LightSlateGray;//#7C7683;
+$notquitewhite: Azure;//#f8f9fa;
 $whitetransparent: rgba(250, 250, 250, 0.6);
-$hoverwhite: #ecf2f6;
+$hoverwhite: WhiteSmoke;//#ecf2f6;
 $white: #fff;
 
 $brandprimary: $purple;
