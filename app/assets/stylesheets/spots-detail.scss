@@ -3,6 +3,15 @@
   .show-spot {
     .container {
       padding-bottom: 0;
+
+      h1 {
+        font-size: 3rem;
+        line-height: 2.5rem;
+        color: $ink;
+        //background-attachment: fixed;
+        //background-image: image-url('orangepurple.png');
+        -webkit-text-fill-color: unset;
+      }
     }
 
     .button-group {

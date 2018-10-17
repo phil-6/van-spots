@@ -46,11 +46,10 @@
     <div>
       <%= @spot.description %>
     </div>
+  </div> <!-- end .container -->
 
 
-
-  </div>
-
+  <!--Map Title-->
   <div class="ninety-container">
     <h3 id="map-title" class="text-center">Map
       <a href="#page-top" title="Page Top" class="float-right">
@@ -58,6 +57,7 @@
       </a>
     </h3>
   </div>
+  <!--Map Div-->
   <div id="map" class="spot-map"></div>
 
 
@@ -119,9 +119,10 @@
     Total Reviews: <%= @spot.ratings.map(&:review_title).count(&:present?) %>
   </div>
 
-</div>
-<!--Map Script-->
+</div> <!-- End Content .show-spot -->
 
+
+<!--Map Script-->
 <script>
     var map;
     //creates a new blank array for all the listing markers
