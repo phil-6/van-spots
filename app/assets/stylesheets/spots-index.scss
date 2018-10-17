@@ -5,7 +5,7 @@
     background: $backgroundgrad;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100%;
+    min-height: 100%;
     .content {
       max-width: 90%;
       margin: auto;
