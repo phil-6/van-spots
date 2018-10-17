@@ -1,7 +1,6 @@
 @import "variables";
 #overboot {
 
-
   .spots-index {
     background: $backgroundgrad;
     background-repeat: no-repeat;
@@ -47,7 +46,6 @@
           -o-transition: 500ms ease 0.2s;
           transition: 500ms ease 0.2s;
         }
-
       }
       .show {
         //border-width: 1px;
@@ -125,35 +123,6 @@
         background-color: red;
         background: $redgrad;
       }
-
-      .spots-index::before {
-        ///*min-height: auto;*/
-        //-webkit-background-size: cover;
-        //-moz-background-size: cover;
-        //background-size: cover;
-        //-o-background-size: cover;
-        //background-position: center;
-        //background-attachment: fixed;
-        //background-image: image-url('van_in_north_wales.JPG');
-        //-webkit-filter: blur(5px);
-        //-moz-filter: blur(5px);
-        //-o-filter: blur(5px);
-        //-ms-filter: blur(5px);
-        //filter: blur(5px);
-        //
-        ////color: $notquitewhite;
-        //
-        //content: ' ';
-        //display: block;
-        //position: absolute;
-        //left: 0;
-        //top: -250px;
-        //width: 100%;
-        //height: 150%;
-        //z-index: -1;
-        //opacity: 0.9;
-      }
     }
   }
-
 }
