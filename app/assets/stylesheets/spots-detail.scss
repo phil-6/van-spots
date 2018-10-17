@@ -1,7 +1,12 @@
 @import "variables";
+
 #overboot {
   .show-spot {
-    .container {
+
+    .spot-header.free_spot {
+      //background: $purplegrad;
+    }
+    .spot-header {
       padding-bottom: 0;
 
       h1 {
@@ -12,10 +17,9 @@
         //background-image: image-url('orangepurple.png');
         -webkit-text-fill-color: unset;
       }
-    }
-
-    .button-group {
-      margin-bottom: 5px;
+      .button-group {
+        margin-bottom: 5px;
+      }
     }
 
     .spot-map {
@@ -26,6 +30,7 @@
       max-width: 90%;
       margin: auto;
       padding-top: 60px;
+      padding-bottom: 1px;
       .card {
         border-width: 1px;
         display: inline-block;

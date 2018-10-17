@@ -1,20 +1,21 @@
-<%= render partial: 'layouts/alerts' %>
 <div id="page-top" class="show-spot">
-  <div class="container">
-    <div class="text-center">
-      <h1><%= @spot.name %></h1>
-      <!--    <h6><%#= @spot.created_at.strftime('%b %d, %Y') %></h6>-->
-      <h6>
-        <small>Created By</small> <%= @spot.user.username %>
-        <small>on</small> <%= @spot.created_at.strftime('%b %d, %Y') %></h6>
-      <h6>Score: <%= @spot.average_rating %>/10</h6>
-      <% if @spot.web_link.present? %><h6><%= link_to 'External Info', @spot.web_link %></h6>
-      <% end %>
-      <h6><%= link_to 'Directions', 'https://www.google.com/maps/dir/?api=1&destination=' +
-          @spot.latitude.to_s + ',' + @spot.longitude.to_s, target: :_blank %></h6>
-    </div>
+  <div class="spot-header text-center <%= @spot.spot_type %>">
+    <%= render partial: 'layouts/alerts' %>
+    <h1><%= @spot.name %></h1>
+    <h6>
+      <small>Created By</small> <%= @spot.user.username %>
+      <small>on</small> <%= @spot.created_at.strftime('%b %d, %Y') %>
+    </h6>
+    <h6>Score: <%= @spot.average_rating %>/10</h6>
+    <% if @spot.web_link.present? %>
+      <h6><%= link_to 'External Info', @spot.web_link %></h6>
+    <% end %>
+    <h6>
+      <%= link_to 'Directions', 'https://www.google.com/maps/dir/?api=1&destination=' +
+        @spot.latitude.to_s + ',' + @spot.longitude.to_s, target: :_blank %>
+    </h6>
 
-    <h6 class="text-center">
+    <h6>
       Type: <strong>
       <% if @spot.spot_type == 'free_spot' %>Free Spot
       <% elsif @spot.spot_type == 'paid_spot' %>Paid Spot
@@ -46,17 +47,18 @@
     <div>
       <%= @spot.description %>
     </div>
-  </div> <!-- end .container -->
+
+    <!--Map Title-->
+    <div class="ninety-container">
+      <h3 id="map-title" class="text-center">Map
+        <a href="#page-top" title="Page Top" class="float-right">
+          <i class="fas fa-angle-double-up"></i>
+        </a>
+      </h3>
+    </div>
+  </div> <!--End of .spot-header-->
 
 
-  <!--Map Title-->
-  <div class="ninety-container">
-    <h3 id="map-title" class="text-center">Map
-      <a href="#page-top" title="Page Top" class="float-right">
-        <i class="fas fa-angle-double-up"></i>
-      </a>
-    </h3>
-  </div>
   <!--Map Div-->
   <div id="map" class="spot-map"></div>
 
@@ -64,7 +66,7 @@
   <!--Reviews-->
   <div id="reviews" class="ninety-container">
     <% if @spot.ratings.map(&:review_title).any?(&:present?) %>
-      <h3 class="text-center" >Reviews
+      <h3 class="text-center">Reviews
         <a href="#page-top" title="Page Top" class="float-right">
           <i class="fas fa-angle-double-up"></i>
         </a>
@@ -130,8 +132,6 @@
     var markerCluster;
     var userPos;
     var infoWindow;
-
-
 
 
     function initMap() {
@@ -254,7 +254,7 @@
         var userInfoWindow = new google.maps.InfoWindow({map: map});
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 userPos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
@@ -266,10 +266,10 @@
                     map: map
                 });
                 userInfoWindow.setContent('<div class="text-center"><strong>You are here.</strong><br />' + userPos.lat + ', ' + userPos.lng + '</div>');
-                userMarker.addListener('click', function(){
+                userMarker.addListener('click', function () {
                     userInfoWindow.open(map, userMarker)
                 });
-            }, function() {
+            }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
@@ -288,8 +288,6 @@
          ===============
          */
     }
-
-
 
 
     /*Location Error Handling*/
@@ -317,21 +315,21 @@
             var marker_type;
             if (marker.type === 'free_spot') {
                 marker_type = 'Free Spot';
-            }else if (marker.type === 'paid_spot') {
+            } else if (marker.type === 'paid_spot') {
                 marker_type = 'Paid Spot';
-            }else if (marker.type === 'campsite') {
+            } else if (marker.type === 'campsite') {
                 marker_type = 'Campsite';
-            }else if (marker.type === 'mtb_spot') {
+            } else if (marker.type === 'mtb_spot') {
                 marker_type = 'MTB Spot';
-            }else if (marker.type === 'climbing_spot') {
+            } else if (marker.type === 'climbing_spot') {
                 marker_type = 'Climbing Spot';
-            }else if (marker.type === 'kayaking_spot') {
+            } else if (marker.type === 'kayaking_spot') {
                 marker_type = 'Kayaking Spot';
-            }else if (marker.type === 'surf_spot') {
+            } else if (marker.type === 'surf_spot') {
                 marker_type = 'Surf Spot';
-            }else if (marker.type === 'bad_spot') {
+            } else if (marker.type === 'bad_spot') {
                 marker_type = 'Bad Spot';
-            }else{
+            } else {
                 marker_type = 'Unknown Spot Type';
             }
             var infoWindowContent = '<div id="content">' +
