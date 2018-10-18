@@ -96,29 +96,17 @@
         background-color: $darkerpurple;
         background: $purplegrad;
       }
-      .paid_spot .card-header {
+      .paid_spot .card-header, .campsite .card-header {
         background-color: $darkerorange;
         background: $orangegrad;
       }
-      .campsite .card-header {
-        background-color: $darkerorange;
-        background: $orangegradleft;
-      }
-      .mtb_spot .card-header {
+      .mtb_spot .card-header, .climbing_spot .card-header {
         background-color: $green;
         background: $greengrad;
       }
-      .climbing_spot .card-header {
-        background-color: $green;
-        background: $greengradleft;
-      }
-      .surf_spot .card-header {
+      .surf_spot .card-header, .kayaking_spot .card-header {
         background-color: $darkerblue;
         background: $bluegrad;
-      }
-      .kayaking_spot .card-header {
-        background-color: $darkerblue;
-        background: $bluegradleft;
       }
       .bad_spot .card-header {
         background-color: red;
