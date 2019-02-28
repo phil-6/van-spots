@@ -35,3 +35,13 @@ $ http :3000/spots Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiO
 (note authorization spelt with a z)
 
 $ http :3000/spots/2/ratings Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MzM5Njk3NjF9.wJnoMyLjeszY8sb0R4t86xdAjyeP1-t-gW5TKyfq0H8'
+
+=================================
+Heroku (some useful commands)
+
+$ heroku login
+
+$ heroku run rails console -a vanspots
+> User.all.map{ |u| [u.id, u.username, u.email] }
+
+$ heroku logs -a vanspots -n 1500
