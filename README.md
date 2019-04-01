@@ -42,6 +42,9 @@ Heroku (some useful commands)
 $ heroku login
 
 $ heroku run rails console -a vanspots
-> User.all.map{ |u| [u.id, u.username, u.email] }
+irb(main):> User.all.map{ |u| [u.id, u.username, u.email] }
 
 $ heroku logs -a vanspots -n 1500
+
+irb(main):> SomeModel.last(5)
+irb(main):> Rating.where.not(user_id: 1)
