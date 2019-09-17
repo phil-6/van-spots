@@ -22,12 +22,20 @@ $blueheadergradend: #8176b5;
 $bluegrad: linear-gradient(to bottom right,$darkerblue,$bluecardgradend);
 $bluegradheader: linear-gradient(to bottom right,$blueheadergradstart,$blueheadergradend);
 
+//$orange: #FF8822;
+//$darkerorange: #EE6600;
+//$orangecardgradend: #f69259;
+//$orangeheadercardstart: #ffdb6f;
+//$orangeheadercardend: #f69259;
+//$orangegrad: linear-gradient(to bottom right,$darkerorange,$orangecardgradend);
+//$orangegradheader: linear-gradient(to bottom right,$orangeheadercardstart,$orangeheadercardend);
+
 $orange: #FF8822;
 $darkerorange: #EE6600;
-$orangecardgradend: #f69259;
-$orangeheadercardstart: #ffdb6f;
-$orangeheadercardend: #f69259;
-$orangegrad: linear-gradient(to bottom right,$darkerorange,$orangecardgradend);
+$orangeheadercardstart: #f12711;
+$orangecardgradend: #f5af19;
+$orangeheadercardend: #f5af19;
+$orangegrad: linear-gradient(to bottom right, $orangeheadercardstart,$orangecardgradend);
 $orangegradheader: linear-gradient(to bottom right,$orangeheadercardstart,$orangeheadercardend);
 
 $green:  #4CB944;
