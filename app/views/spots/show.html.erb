@@ -37,7 +37,7 @@
       <% end %>
       <%= link_to "Rate Spot", new_spot_rating_path(@spot), class: 'btn btn-sm btn-primary' %>
     </div>
-    <% if @spot.ratings.map(&:review_title).any?(&:present?) %>
+    <% if @spot.ratings.map(&:review_title).any?(&:present?) || @spot.ratings.map(&:review_body).any?(&:present?) %>
       <div class="button group text-center">
         <!--<a href="#map-title" class="btn btn-sm btn-info">Go to Map</a>-->
         <a href="#reviews" class="btn btn-sm btn-info">Go to Reviews</a>
@@ -65,7 +65,7 @@
 
   <!--Reviews-->
   <div id="reviews" class="ninety-container">
-    <% if @spot.ratings.map(&:review_title).any?(&:present?) %>
+    <% if @spot.ratings.map(&:review_title).any?(&:present?) || @spot.ratings.map(&:review_body).any?(&:present?) %>
       <h3 class="text-center">Reviews
         <a href="#page-top" title="Page Top" class="float-right">
           <i class="fas fa-angle-double-up"></i>
