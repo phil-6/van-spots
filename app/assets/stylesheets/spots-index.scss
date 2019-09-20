@@ -66,22 +66,22 @@
       }
 
       .more-info {
-        height: 0;
-        overflow: hidden;
-        -webkit-transition: height 500ms ease 0.2s;
-        -moz-transition: height 500ms ease 0.2s;
-        -o-transition: height 500ms ease 0.2s;
-        transition: height 500ms ease 0.2s;
-        a:hover {
-          -webkit-transition: initial;
-          -moz-transition: initial;
-          -o-transition: initial;
-          transition: initial;
-        }
+        //height: 0;
+        //overflow: hidden;
+        //-webkit-transition: height 500ms ease 0.2s;
+        //-moz-transition: height 500ms ease 0.2s;
+        //-o-transition: height 500ms ease 0.2s;
+        //transition: height 500ms ease 0.2s;
+        //a:hover {
+        //  -webkit-transition: initial;
+        //  -moz-transition: initial;
+        //  -o-transition: initial;
+        //  transition: initial;
+        //}
       }
       .card:hover {
         .more-info {
-          height: 48px;
+          //height: 48px;
         }
       }
 

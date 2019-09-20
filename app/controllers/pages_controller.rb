@@ -1,12 +1,19 @@
 class PagesController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:main, :map]
+  before_action :set_user, only: :user_profile
   def main
     render template: "pages/main"
   end
 
   def about
     render template: "pages/_about"
+  end
+
+  def user_profile
+    @user
+    @spots  = Spot.where(:user_id => @user.id)
+    @ratings = Rating.where(:user_id => @user.id)
+    render template: "pages/user_profile"
   end
 
   # def how_to
@@ -17,5 +24,10 @@ class PagesController < ApplicationController
   #   render template: "pages/map"
   # end
 
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
 end

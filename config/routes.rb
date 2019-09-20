@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get '/users',           to: 'pages#main'
+  get '/users/:id',       to: 'pages#user_profile'
   get '/users/password',  to: redirect('/users/password/new')
 
   get '/map',             to: 'pages#map'

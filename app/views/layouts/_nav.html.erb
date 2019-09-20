@@ -24,9 +24,10 @@
           <p class="nav-no-link">Logged in as <strong><%= current_user.username %></strong></p>
         </li>
         <li class="nav-item">
-          <%= link_to edit_user_registration_path, :class => 'nav-link' do %>
-            Edit Profile <i class="fas fa-user-edit"></i>
-          <% end %>
+          <a class="nav-link" href="/users/<%= current_user.id %>">View Profile <i class="fas fa-user-edit"></i></a>
+          <%#= link_to users_path(current_user), :class => 'nav-link' do %>
+
+          <%# end %>
         </li>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, method: :delete, :class => 'nav-link' do %>

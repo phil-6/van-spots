@@ -39,6 +39,7 @@
               <th scope="col">Rating</th>
               <th scope="col"></th>
               <th scope="col">Description</th>
+              <th scope="col">Created By</th>
               <th scope="col">Created At</th>
               <th scope="col">Last Update</th>
             </tr>
@@ -60,6 +61,7 @@
                 <td><%= spot.average_rating %>/10</td>
                 <td>from <%= spot.ratings.count %> scores</td>
                 <td><%= spot.description.truncate(60) %></td>
+                <td><%= spot.user.username %></td>
                 <td><%= spot.created_at.strftime('%b %d, %Y') %></td>
                 <td><%= spot.updated_at.strftime('%b %d, %Y') %></td>
               </tr>

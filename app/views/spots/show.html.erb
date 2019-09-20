@@ -3,7 +3,7 @@
     <%= render partial: 'layouts/alerts' %>
     <h1><%= @spot.name %></h1>
     <h6>
-      <small>Created By</small> <%= @spot.user.username %>
+      <small>Created By</small> <a href="/users/<%= @spot.user.id %>"> <%= @spot.user.username %> </a>
       <small>on</small> <%= @spot.created_at.strftime('%b %d, %Y') %>
     </h6>
     <h6>Score: <%= @spot.average_rating %>/10</h6>
@@ -96,7 +96,7 @@
               </div>
 
               <div class="card-footer">
-                <small class="text-muted">by <%= rating.user.username %>
+                <small class="text-muted">by <a href="/users/<%= rating.user.id %>"><%= rating.user.username %></a>
                   on <%= rating.created_at.strftime('%b %d, %Y') %></small>
               </div>
 
