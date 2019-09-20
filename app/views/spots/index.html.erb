@@ -27,55 +27,97 @@
       <button class="btn btn-sm" onclick="filterByRating('9')">>9/10</button>
     </div>
 
-    <div class="ninety-container">
-      <div class="card-columns">
-        <% @spots.each do |spot| %>
-          <div class="card <%= spot.spot_type %> rating-<%= spot.average_rating.floor %>">
-            <% if user_signed_in? %>
-              <a href="/spots/<%= spot.id %>">
+      <div id="spot-table" class="table-responsive">
+        <table class="table table-dark table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Description</th>
+              <th scope="col">Created At</th>
+              <% if user_signed_in? %>
+
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% @spots.each do |spot| %>
+            <%# I apologise sincerely for anyone else who has to read the following line of code%>
+              <tr class="filterable <%= spot.spot_type %> rating-<%= spot.average_rating.floor %> <% if user_signed_in? %>clickable" onclick="window.location='/spots/<%= spot.id %>';<% end %>">
+                <td><%= spot.name %></td>
+                <td><% if spot.spot_type == 'free_spot' %>Free Spot
+                  <% elsif spot.spot_type == 'paid_spot' %>Paid Spot
+                  <% elsif spot.spot_type == 'campsite' %>Campsite
+                  <% elsif spot.spot_type == 'mtb_spot' %>MTB Spot
+                  <% elsif spot.spot_type == 'climbing_spot' %>Climbing Spot
+                  <% elsif spot.spot_type == 'kayaking_spot' %>Kayaking Spot
+                  <% elsif spot.spot_type == 'surf_spot' %>Surf Spot
+                  <% elsif spot.spot_type == 'bad_spot' %>Bad Spot
+                  <% else %>Spot Type Unknown<% end %></td>
+                <td><%= spot.average_rating %>/10</td>
+                <td><%= spot.description.truncate(60) %></td>
+                <td><%= spot.created_at.strftime('%b %d, %Y') %></td>
+              </tr>
             <% end %>
+          </tbody>
+        </table>
+     </div> <!-- #spot-table -->
+    <div id="no-spots-error" class="no-spots-error alert alert-danger text-center">
+      <h3> Sorry, no spots found. Try browsing the <a href="/map">map</a></h3>
+    </div>
+
+
+
+<!--    <div class="ninety-container">
+      <div class="card-columns">
+        <%# @spots.each do |spot| %>
+          <div class="card <%#= spot.spot_type %> rating-<%#= spot.average_rating.floor %>">
+            <%# if user_signed_in? %>
+              <a href="/spots/<%#= spot.id %>">
+            <%# end %>
 
             <div class="card-header text-center" >
-              <h2 class="card-title"><%= spot.name %></h2>
+              <h2 class="card-title"><%#= spot.name %></h2>
               <h5>
-                <% if spot.spot_type == 'free_spot' %>Free Spot
-                <% elsif spot.spot_type == 'paid_spot' %>Paid Spot
-                <% elsif spot.spot_type == 'campsite' %>Campsite
-                <% elsif spot.spot_type == 'mtb_spot' %>MTB Spot
-                <% elsif spot.spot_type == 'climbing_spot' %>Climbing Spot
-                <% elsif spot.spot_type == 'kayaking_spot' %>Kayaking Spot
-                <% elsif spot.spot_type == 'surf_spot' %>Surf Spot
-                <% elsif spot.spot_type == 'bad_spot' %>Bad Spot
-                <% else %>Spot Type Unknown<% end %> - <%= spot.average_rating %>/10
+                <%# if spot.spot_type == 'free_spot' %>Free Spot
+                <%# elsif spot.spot_type == 'paid_spot' %>Paid Spot
+                <%# elsif spot.spot_type == 'campsite' %>Campsite
+                <%# elsif spot.spot_type == 'mtb_spot' %>MTB Spot
+                <%# elsif spot.spot_type == 'climbing_spot' %>Climbing Spot
+                <%# elsif spot.spot_type == 'kayaking_spot' %>Kayaking Spot
+                <%# elsif spot.spot_type == 'surf_spot' %>Surf Spot
+                <%# elsif spot.spot_type == 'bad_spot' %>Bad Spot
+                <%# else %>Spot Type Unknown<%# end %> - <%#= spot.average_rating %>/10
               </h5>
             </div>
 
-            <% if user_signed_in? %>
+            <%# if user_signed_in? %>
               </a>
-            <% end %>
+            <%# end %>
 
             <div class="card-body">
-              <h6>Created By: <%= spot.user.username %> on <%= spot.created_at.strftime('%b %d, %Y') %></h6>
-              <%= spot.description %>
+              <h6>Created By: <%#= spot.user.username %> on <%#= spot.created_at.strftime('%b %d, %Y') %></h6>
+              <%#= spot.description.truncate(160) %>
             </div>
 
 
             <div class="more-info">
               <div class="card-footer text-center">
-                <% if user_signed_in? %>
-                  <%= link_to "More Info", spot_path(spot) %>
-                <% else %>
-                  <%= link_to new_user_session_path, :class => 'nav-link' do%>
+                <%# if user_signed_in? %>
+                  <%#= link_to "More Info", spot_path(spot) %>
+                <%# else %>
+                  <%#= link_to new_user_session_path, :class => 'nav-link' do%>
                     Login for More Info
-                  <% end %>
-                <% end %>
+                  <%# end %>
+                <%# end %>
               </div>
             </div>
 
           </div>
-        <% end %>
+        <%# end %>
       </div>
-    </div>
+    </div>-->
   </div>
 </div>
 

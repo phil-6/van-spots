@@ -9,6 +9,7 @@ $purpleheadergradstart: #ba77b1;
 $purpleheadergradend: #8176b5;
 $purpletransparent: rgba(102, 51, 153, 0.4);
 $purplegrad: linear-gradient(to bottom right,$darkerpurple, $purplecardgradend);
+$purplegradhoriz: linear-gradient(to right,$darkerpurple, $purplecardgradend);
 $purplegradheader: linear-gradient(to bottom right,$purpleheadergradstart, $purpleheadergradend);
 
 $lighterblue: #2EAEE2;
@@ -20,6 +21,7 @@ $bluecardgradend: #76c4e2;
 $blueheadergradstart: #76c4e2;
 $blueheadergradend: #8176b5;
 $bluegrad: linear-gradient(to bottom right,$darkerblue,$bluecardgradend);
+$bluegradhoriz: linear-gradient(to right,$darkerblue,$bluecardgradend);
 $bluegradheader: linear-gradient(to bottom right,$blueheadergradstart,$blueheadergradend);
 
 //$orange: #FF8822;
@@ -36,6 +38,7 @@ $orangeheadercardstart: #f12711;
 $orangecardgradend: #f5af19;
 $orangeheadercardend: #f5af19;
 $orangegrad: linear-gradient(to bottom right, $orangeheadercardstart,$orangecardgradend);
+$orangegradhoriz: linear-gradient(to right, $orangeheadercardstart,$orangecardgradend);
 $orangegradheader: linear-gradient(to bottom right,$orangeheadercardstart,$orangeheadercardend);
 
 $green:  #4CB944;
@@ -44,9 +47,12 @@ $greencardgradend: #76c4e2;
 $greenheadergradstart: #76c4e2;
 $greenheadergradend: #85cba8;
 $greengrad: linear-gradient(to bottom right,$darkergreen,$greencardgradend);
+$greengradhoriz: linear-gradient(to right,$darkergreen,$greencardgradend);
 $greengradheader: linear-gradient(to bottom right,$greenheadergradstart,$greenheadergradend);
 
 $redgrad: linear-gradient(to bottom right, darkred, orangered);
+$redgradhoriz: linear-gradient(to right, darkred, orangered);
+
 
 $lighterink: #161028;
 $ink: #110C1E;

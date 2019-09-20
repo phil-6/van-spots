@@ -1,21 +1,36 @@
+function errorCheck() {
+    if (document.getElementsByClassName("show").length === 0) {
+        errmsg = document.getElementById("no-spots-error");
+        removeClass(errmsg, "no-spots-error");
+        table = document.getElementById("spot-table");
+        addClass(table, "no-spots-error");
+    }
+    if (document.getElementsByClassName("show").length > 0) {
+        errmsg = document.getElementById("no-spots-error");
+        addClass(errmsg, "no-spots-error");
+        table = document.getElementById("spot-table");
+        removeClass(table, "no-spots-error");
+    }
+}
+
 function filterByType(spot_type) {
     changeActiveButton("spot_type");
     var otherFilter = document.getElementById("rating-filters").getElementsByClassName("active")[0].innerText;
     var cards, i;
-    cards = document.getElementsByClassName("card");
+    cards = document.getElementsByClassName("filterable");
     if (spot_type === "all") spot_type = "";
     // Add the "show" class to the filtered elements, and remove the "show" class from the elements that are not selected
     for (i = 0; i < cards.length; i++) {
         removeClass(cards[i], "show");
         if (cards[i].className.indexOf(spot_type) > -1) addClass(cards[i], "show");
     }
-
+    errorCheck()
 }
 
 function filterByRating(spot_rating) {
     changeActiveButton("rating");
     var cards, i;
-    cards = document.getElementsByClassName("card");
+    cards = document.getElementsByClassName("filterable");
     if (spot_rating === "all") spot_rating = "";
     // Add the "show" class to the filtered elements, and remove the "show" class from the elements that are not selected
     for (i = 0; i < cards.length; i++) {
@@ -24,6 +39,7 @@ function filterByRating(spot_rating) {
             if (cards[i].className.indexOf("rating-" + s) > -1) addClass(cards[i], "show");
         }
     }
+    errorCheck()
 }
 
 // Show filtered elements
