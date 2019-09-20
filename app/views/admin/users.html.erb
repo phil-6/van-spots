@@ -1,0 +1,70 @@
+<div class="spots-index">
+  <div class="content">
+    <div class="finder-header">
+      <h1>Users</h1>
+    </div>
+
+    <div id="spot-table" class="table-responsive">
+        <table class="table table-dark table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Email</th>
+              <th scope="col">Username</th>
+              <th scope="col">Description</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Updated At</th>
+              <th scope="col">Deleted At</th>
+              <th scope="col">Admin</th>
+              <th scope="col">Sign In Count</th>
+              <th scope="col">Current Sign In</th>
+              <th scope="col">Last Sign in</th>
+              <th scope="col">Spots</th>
+              <th scope="col">Ratings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% User.all.order(:id).each do |user| %>
+              <tr>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.username %></td>
+                <td><%= user.description.truncate(40) %></td>
+                <td>
+                  <% if user.created_at? %>
+                    <%= user.created_at.strftime('%b %d, %Y') %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if user.updated_at? %>
+                    <%= user.updated_at.strftime('%b %d, %Y') %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if user.deleted_at? %>
+                    <%= user.deleted_at.strftime('%b %d, %Y') %>
+                  <% end %>
+                </td>
+                <td><%= user.admin %></td>
+                <td><%= user.sign_in_count %></td>
+                <td>
+                  <% if user.current_sign_in_at? %>
+                    <%= user.current_sign_in_at.strftime('%b %d, %Y') %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if user.last_sign_in_at? %>
+                    <%= user.last_sign_in_at.strftime('%b %d, %Y') %>
+                  <% end %>
+                </td>
+                <td><%= Spot.where(user_id: user.id).count %></td>
+                <td><%= Rating.where(user_id: user.id).count %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+     </div> <!-- #spot-table -->
+
+
+  </div>
+</div>

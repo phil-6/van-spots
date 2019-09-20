@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   # get '/about',           to: 'pages#about'
   # get '/how-to',          to: 'pages#how_to'
 
+  namespace :admin do
+    resources :users
+  end
+
+
 end
