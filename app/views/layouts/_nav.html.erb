@@ -12,6 +12,14 @@
     </ul>
     <ul class="nav navbar-nav ml-auto">
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <li class="nav-item">
+            <p class="nav-no-link">Daily Users: <strong><%= User.where("last_sign_in_at > ?", 1.day.ago).count %></strong></p>
+          </li>
+          <li class="nav-item">
+            <p class="nav-no-link">Monthly Users: <strong><%= User.where("last_sign_in_at > ?", 1.month.ago).count %></strong></p>
+          </li>
+        <% end %>
         <li class="nav-item">
           <p class="nav-no-link">Logged in as <strong><%= current_user.username %></strong></p>
         </li>
