@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/api/spots',       to: 'spots#api_index'
   get '/api/spots/:id',   to: 'spots#api_show'
 
+  post 'sign_out_all/action', to: 'admin/users#sign_out_all'
+
   # get '/about',           to: 'pages#about'
   # get '/how-to',          to: 'pages#how_to'
 

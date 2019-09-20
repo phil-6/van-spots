@@ -2,6 +2,8 @@
   <div class="content">
     <div class="finder-header">
       <h1>Users</h1>
+      <%= button_to "Log Out All Users", sign_out_all_action_path, method: :post, class: 'btn btn-sm btn-secondary' %>
+      <hr />
     </div>
 
     <div id="spot-table" class="table-responsive">

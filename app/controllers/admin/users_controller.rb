@@ -1,9 +1,15 @@
 class Admin::UsersController < ApplicationController
   before_action :authorize_admin
-  before_action :set_user, except: :index
+  before_action :set_user, except: [:index, :sign_out_all]
 
   def index
     render template: "admin/users"
+  end
+
+  def sign_out_all
+    User.all.each do |user|
+      sign_out user
+    end
   end
 
   private
