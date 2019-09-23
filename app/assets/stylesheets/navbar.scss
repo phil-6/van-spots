@@ -58,6 +58,25 @@
     @media only screen and (max-width: 768px ){
       background-color: $skyblue;
     }
+    .dropdown-toggle::after {
+      display:none;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0; // remove the gap so it doesn't close
+      background-color: $skybluetransparent;
+      border: 0;
+      p {
+        padding: 0;
+        -webkit-transition: all .35s;
+        -moz-transition: all .35s;
+      }
+      .dropdown-item:focus, .dropdown-item:hover {
+        background-color: inherit;
+        color: $darkerorange;
+
+      }
+    }
 
   }
 }

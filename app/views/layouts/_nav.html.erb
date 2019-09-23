@@ -13,11 +13,27 @@
     <ul class="nav navbar-nav ml-auto">
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <li class="nav-item">
-            <p class="nav-no-link">Daily Users: <strong><%= User.where("last_sign_in_at > ?", 1.day.ago).count %></strong></p>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Stats
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <p class="dropdown-item nav-no-link">Total Spots:
+                <strong><%= Spot.count %></strong></p>
+              <p class="dropdown-item nav-no-link">New Spots:
+                <strong><%= Spot.where("created_at > ?", 1.month.ago).count %></strong></p>
+              <p class="dropdown-item nav-no-link">Total Ratings:
+                <strong><%= Rating.count %></strong></p>
+              <p class="dropdown-item nav-no-link">New Ratings:
+                <strong><%= Rating.where("created_at > ?", 1.month.ago).count %></strong></p>
+              <p class="dropdown-item nav-no-link">Daily Users:
+                <strong><%= User.where("last_sign_in_at > ?", 1.day.ago).count %></strong></p>
+              <p class="dropdown-item nav-no-link">Monthly Users:
+                <strong><%= User.where("last_sign_in_at > ?", 1.month.ago).count %></strong></p>
+            </div>
           </li>
           <li class="nav-item">
-            <p class="nav-no-link">Monthly Users: <strong><%= User.where("last_sign_in_at > ?", 1.month.ago).count %></strong></p>
+            <strong><p class="nav-no-link">|</p></strong>
           </li>
         <% end %>
         <li class="nav-item">
