@@ -1,6 +1,6 @@
-<div class="spots-index">
+<div class="table-index">
   <div class="content">
-    <div class="finder-header">
+    <div class="content-header">
       <h1>Users</h1>
       <%= button_to "Log Out All Users", sign_out_all_action_path, method: :post, class: 'btn btn-sm btn-secondary' %>
       <hr />
@@ -30,9 +30,9 @@
             <% User.all.order(:id).each do |user| %>
               <tr>
                 <th scope="row"><a href="/users/<%= user.id %>"><%= user.id %></a></th>
-                <td><%= user.email %></td>
+                <td><a href="mailto:<%= user.email %>"><i class="fas fa-envelope"></i></a></td>
                 <td><%= user.username %></td>
-                <td><%= user.description.truncate(40) %></td>
+                <td><%= user.description.truncate(60) %></td>
                 <td>
                   <% if user.created_at? %>
                     <%= user.created_at.strftime('%b %d, %Y') %>

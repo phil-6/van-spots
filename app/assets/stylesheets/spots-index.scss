@@ -1,182 +1,31 @@
 @import "variables";
 #overboot {
-
-  .spots-index {
-    background: $backgroundgrad;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100%;
-    .content {
-      //max-width: 90%; //removed when transitioning to table from cards
-      margin: auto;
-      .filter-buttons {
-        margin: auto;
-        text-align: center;
-        padding-bottom: 10px;
-        .btn {
-          background-color: $darkerorange;
-          color: $notquitewhite;
-          margin-bottom: 10px;
-        }
-        .btn:hover {
-          background-color: $orange;
-        }
-        .active {
-          background-color: $purple;
-        }
-        .active:hover {
-          background-color: $darkerpurple;
-        }
-      }
-      .filterable {
-        display: none;
-      }
-      .card {
-        display: none;
-        //height:0;
-        border: 0;
-        //margin: 0;
-        //overflow:hidden;
-        //-webkit-transition: height 500ms ease 0.2s;
-        //-moz-transition: height 500ms ease 0.2s;
-        //-o-transition:height 500ms ease 0.2s;
-        //transition: height 500ms ease 0.2s;
-        a:hover {
-          text-decoration: none;
-          font-weight: 700;
-          text-shadow: 0 0 16px $whitetransparent;
-          -webkit-transition: 500ms ease 0.2s;
-          -moz-transition: 500ms ease 0.2s;
-          -o-transition: 500ms ease 0.2s;
-          transition: 500ms ease 0.2s;
-        }
-      }
-      .show {
-        //border-width: 1px;
-        //margin-bottom: 12px;
-        //height:300px;
-        display: inline-block;
-      }
-      @media screen and (max-width: 576px) {
-        .ninety-container {
-          .card {
-            width: 100%;
-          }
-        }
-      }
-
-      .more-info {
-        //height: 0;
-        //overflow: hidden;
-        //-webkit-transition: height 500ms ease 0.2s;
-        //-moz-transition: height 500ms ease 0.2s;
-        //-o-transition: height 500ms ease 0.2s;
-        //transition: height 500ms ease 0.2s;
-        //a:hover {
-        //  -webkit-transition: initial;
-        //  -moz-transition: initial;
-        //  -o-transition: initial;
-        //  transition: initial;
-        //}
-      }
-      .card:hover {
-        .more-info {
-          //height: 48px;
-        }
-      }
-
-      .finder-header {
-        position: relative;
-        width: 100%;
-        text-align: center;
-        padding-top: 100px;
-      }
-
-      .card-header {
-        color: $notquitewhite;
-      }
-      .free_spot .card-header {
-        background-color: $darkerpurple;
-        background: $purplegrad;
-      }
-      .paid_spot .card-header, .campsite .card-header {
-        background-color: $darkerorange;
-        background: $orangegrad;
-      }
-      .mtb_spot .card-header, .climbing_spot .card-header {
-        background-color: $darkergreen;
-        background: $greengrad;
-      }
-      .surf_spot .card-header, .kayaking_spot .card-header {
-        background-color: $darkerblue;
-        background: $bluegrad;
-      }
-      .bad_spot .card-header {
-        background-color: red;
-        background: $redgrad;
-      }
-
-      tbody {
-        .clickable {
-          cursor: pointer;
-        }
-        .filterable {
-          display: none;
-        }
-        .show {
-          display: table-row;
-        }
-        td {
-          max-height: 60px;
-          white-space: nowrap ;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .free_spot {
-          background-color: $darkerpurple;
-          background: $purplegradhoriz;
-          &:hover {
-            background: $darkerpurple;
-          }
-        }
-        .paid_spot, .campsite {
-          background-color: $darkerorange;
-          background: $orangegradhoriz;
-          &:hover {
-            background: $orangeheadercardstart;
-          }
-        }
-        .mtb_spot, .climbing_spot {
-          background-color: $darkergreen;
-          background: $greengradhoriz;
-          &:hover {
-            background: $darkergreen;
-          }
-        }
-        .surf_spot, .kayaking_spot {
-          background-color: $darkerblue;
-          background: $bluegradhoriz;
-          &:hover {
-            background: $darkerblue;
-          }
-        }
-        .bad_spot {
-          background-color: red;
-          background: $redgradhoriz;
-          &:hover {
-            background: red;
-          }
-        }
-      }
-      #no-spots-error {
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 10px;
-      }
-      .no-spots-error {
-        display:none;
-      }
+  .filter-buttons {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+    .btn {
+      background-color: $darkerorange;
+      color: $notquitewhite;
+      margin-bottom: 10px;
     }
+    .btn:hover {
+      background-color: $orange;
+    }
+    .active {
+      background-color: $purple;
+    }
+    .active:hover {
+      background-color: $darkerpurple;
+    }
+  }
+  .filterable {
+    display: none;
+  }
+  .show {
+    //border-width: 1px;
+    //margin-bottom: 12px;
+    //height:300px;
+    display: inline-block;
   }
 }
