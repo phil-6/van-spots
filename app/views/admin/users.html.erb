@@ -32,7 +32,7 @@
                 <th scope="row"><a href="/users/<%= user.id %>"><%= user.id %></a></th>
                 <td><a href="mailto:<%= user.email %>"><i class="fas fa-envelope"></i></a></td>
                 <td><%= user.username %></td>
-                <td><%= user.description.truncate(60) %></td>
+                <td class="limit-width"><%= user.description.truncate(60) %></td>
                 <td>
                   <% if user.created_at? %>
                     <%= user.created_at.strftime('%b %d, %Y') %>
