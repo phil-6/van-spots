@@ -24,3 +24,12 @@
 </header>
 <%= render partial: 'layouts/about' %>
 <%= render partial: 'layouts/how_to' %>
+
+<script>
+    $('a').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+    });
+</script>
