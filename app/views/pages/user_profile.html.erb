@@ -10,13 +10,13 @@
       <hr/>
       <h4>About <%= @user.username %></h4>
       <h3><%= @user.description %></h3>
-      <h4><%= @user.username %> has added <strong><%= @spots.count %></strong> spots and
+      <h4><%= @user.username %> has added <strong><%= @spotcount %></strong> spots and
         <strong><%= @ratings.count %></strong> ratings</h4>
       <hr/>
     </div>
 
     <div class="ninety-container">
-      <% if @spots.count == 0 %>
+      <% if @spotcount == 0 %>
         <h3 class="text-center"><%= @user.username %> hasn't added any spots yet</h3>
       <% else %>
         <h3 class="text-center"><%= @user.username %>'s Spots</h3>

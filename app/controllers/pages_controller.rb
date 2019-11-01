@@ -11,7 +11,8 @@ class PagesController < ApplicationController
 
   def user_profile
     @user
-    @spots  = Spot.where(:user_id => @user.id)
+    @spotcount = Spot.where(:user_id => @user.id).size
+    @spots  = Spot.where(:user_id => @user.id).includes(:ratings).first(100)
     @ratings = Rating.where(:user_id => @user.id)
     render template: "pages/user_profile"
   end
