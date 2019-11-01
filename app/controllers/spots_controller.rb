@@ -8,7 +8,7 @@ class SpotsController < ApplicationController
     if params[:spot_type]
       @spots = Spot.where(:spot_type => params[:spot_type])
     else
-      @spots = Spot.all
+      @spots = Spot.all.includes(:user, :ratings)
     end
   end
 
@@ -17,7 +17,7 @@ class SpotsController < ApplicationController
     if params[:spot_type]
       @spots = Spot.where(:spot_type => params[:spot_type])
     else
-      @spots = Spot.all
+      @spots = Spot.all.includes(:user, :ratings)
     end
     render json: @spots.as_json(methods: [:average_rating])
   end

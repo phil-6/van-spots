@@ -59,7 +59,7 @@
                   <% elsif spot.spot_type == 'bad_spot' %>Bad Spot
                   <% else %>Spot Type Unknown<% end %></td>
                 <td><%= spot.average_rating %>/10</td>
-                <td>from <%= spot.ratings.count %> scores</td>
+                <td>from <%= spot.ratings.size %> scores</td>
                 <td><%= spot.description.truncate(60) %></td>
                 <td><%= spot.user.username %></td>
                 <td><%= spot.created_at.strftime('%b %d, %Y') %></td>
