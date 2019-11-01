@@ -45,7 +45,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @spots.each do |spot| %>
+            <% @spots.find_each do |spot| %>
             <%# I apologise sincerely for anyone else who has to read the following line of code%>
               <tr class="filterable <%= spot.spot_type %> rating-<%= spot.average_rating.floor %> <% if user_signed_in? %>clickable" onclick="window.location='/spots/<%= spot.id %>';<% end %>">
                 <td><%= spot.name %></td>
