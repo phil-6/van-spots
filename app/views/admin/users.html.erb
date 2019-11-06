@@ -15,12 +15,10 @@
               <th scope="col">Username</th>
               <th scope="col">Description</th>
               <th scope="col">Created At</th>
-              <th scope="col">Updated At</th>
               <th scope="col">Deleted At</th>
               <th scope="col">Admin</th>
               <th scope="col">Sign Ins</th>
               <th scope="col">Current Sign In</th>
-              <th scope="col">Last Sign in</th>
               <th scope="col">Spots</th>
               <th scope="col">Ratings</th>
               <th scope="col"><i class="far fa-eye"></i></th>
@@ -32,15 +30,10 @@
                 <th scope="row"><a href="/users/<%= user.id %>"><%= user.id %></a></th>
                 <td><a href="mailto:<%= user.email %>"><i class="fas fa-envelope"></i></a></td>
                 <td><%= user.username %></td>
-                <td class="limit-width"><%= user.description.truncate(60) %></td>
+                <td class="limit-width"><%= user.description.truncate(80) %></td>
                 <td>
                   <% if user.created_at? %>
                     <%= user.created_at.strftime('%b %d, %Y') %>
-                  <% end %>
-                </td>
-                <td>
-                  <% if user.updated_at? %>
-                    <%= user.updated_at.strftime('%b %d, %Y') %>
                   <% end %>
                 </td>
                 <td>
@@ -55,13 +48,8 @@
                     <%= user.current_sign_in_at.strftime('%b %d, %Y') %>
                   <% end %>
                 </td>
-                <td>
-                  <% if user.last_sign_in_at? %>
-                    <%= user.last_sign_in_at.strftime('%b %d, %Y') %>
-                  <% end %>
-                </td>
-                <td><%= Spot.where(user_id: user.id).count %></td>
-                <td><%= Rating.where(user_id: user.id).count %></td>
+                <td><%= Spot.where(user_id: user.id).size %></td>
+                <td><%= Rating.where(user_id: user.id).size %></td>
                 <td><a href="/users/<%= user.id %>"><i class="far fa-eye"></i></a></td>
               </tr>
             <% end %>
