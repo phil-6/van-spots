@@ -8,7 +8,7 @@ class SpotsController < ApplicationController
     if params[:spot_type]
       @spots = Spot.where(:spot_type => params[:spot_type])
     else
-      @spots = Spot.all.includes(:user, :ratings)
+      @spots = Spot.all.includes(:user, :ratings).order('average_rating DESC')
     end
   end
 
