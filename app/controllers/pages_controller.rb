@@ -3,8 +3,8 @@ class PagesController < ApplicationController
   before_action :set_user, only: :user_profile
 
   def main
-    @spots= Spot.all.includes(:user, :ratings).order('updated_at DESC').first(6)
-    @ratings = Rating.all.includes(:user, :spot).order('updated_at DESC').first(6)
+    @spots= Spot.all.includes(:user, :ratings).order('created_at DESC').first(6)
+    @ratings = Rating.all.includes(:user, :spot).order('created_at DESC').first(6)
 
     render template: "pages/main"
   end
