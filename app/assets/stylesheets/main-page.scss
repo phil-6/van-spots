@@ -48,18 +48,33 @@ a {
 .main-page-cards {
   min-height: 100vh;
   .card {
-    min-width: 300px;
+    min-width: 450px;
     margin-bottom: 15px;
     margin-top: 2px;
     a, a:hover  {
       color: inherit;
     }
+    .card-header {
+      h2, h5 {
+        width: inherit;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+    .card-body {
+      padding: 0.70rem;
+    }
 
   }
-  .spot_card {
+  .spot-card {
     .card-header {
       color: $notquitewhite;
+      :hover {
+        color: $notquitewhite;
+      }
       a, a:hover{
+        color: $notquitewhite;
         text-decoration-color: $notquitewhite;
       }
     }

@@ -3,7 +3,7 @@
   <h1>Latest Spots</h1>
     <div class="card-deck">
       <% @spots.each do |spot| %>
-        <div class="card spot_card <%= spot.spot_type %> rating-<%= spot.average_rating.floor %>">
+        <div class="card spot-card <%= spot.spot_type %> rating-<%= spot.average_rating.floor %>">
 
 
           <div class="card-header text-center" >

@@ -28,7 +28,7 @@
 
             <div class="card-body">
               <h4 class="card-title text-center"><%= rating.review_title %></h4>
-              <p class="card-text"><%= rating.review_body %></p>
+              <p class="card-text text-justify"><%= rating.review_body.truncate(170) %></p>
             </div>
 
             <div class="card-footer">
