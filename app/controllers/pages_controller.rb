@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def main
     @spots= Spot.all.includes(:user, :ratings).order('created_at DESC').first(6)
-    @ratings = Rating.all.includes(:user, :spot).order('created_at DESC').first(6)
+    @ratings = Rating.all.where.not(review_title: [nil, ""]).includes(:user, :spot).order('created_at DESC').first(6)
 
     render template: "pages/main"
   end
