@@ -1,9 +1,14 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:main, :map]
   before_action :set_user, only: :user_profile
+
   def main
+    @spots= Spot.all.includes(:user, :ratings).order('updated_at DESC').first(6)
+    @ratings = Rating.all.includes(:user, :spot).order('updated_at DESC').first(6)
+
     render template: "pages/main"
   end
+
 
   def about
     render template: "pages/_about"
