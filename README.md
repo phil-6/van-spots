@@ -51,4 +51,4 @@ irb(main):> SomeModel.last(5)
 
 irb(main):> Rating.where.not(user_id: 1)
 
-.
+..
