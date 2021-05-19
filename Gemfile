@@ -57,5 +57,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Security Update
-gem 'nokogiri', '~> 1.11.0'
+gem 'nokogiri', '~> 1.11.4'
 
